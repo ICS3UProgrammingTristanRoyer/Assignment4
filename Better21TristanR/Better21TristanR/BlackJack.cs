@@ -46,12 +46,14 @@ namespace Simplified21TristanR
 
 
 
+		/*????? 
+
+		card 1 = ChangeCard(picbox , index)
 
 
 
 
-
-
+		???*/
 		public BlackJack()
 		{
 			// gives the variable " backSound" the casino sound file
