@@ -1,4 +1,4 @@
-﻿namespace Simplified21TristanR
+﻿namespace Better21TristanR
 {
 	partial class BlackJack
 	{
@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlackJack));
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +62,8 @@
 			this.lblDealerCard4 = new System.Windows.Forms.Label();
 			this.lblBlackjack = new System.Windows.Forms.Label();
 			this.lblTitle = new System.Windows.Forms.Label();
+			this.lblTime = new System.Windows.Forms.Label();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudBetAmount)).BeginInit();
 			this.SuspendLayout();
@@ -89,21 +92,21 @@
 			// newGameToolStripMenuItem
 			// 
 			this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-			this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.newGameToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
 			this.newGameToolStripMenuItem.Text = "New Game";
 			this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
 			// 
 			// resetProgressToolStripMenuItem
 			// 
 			this.resetProgressToolStripMenuItem.Name = "resetProgressToolStripMenuItem";
-			this.resetProgressToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.resetProgressToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
 			this.resetProgressToolStripMenuItem.Text = "Reset Progress";
 			this.resetProgressToolStripMenuItem.Click += new System.EventHandler(this.resetProgressToolStripMenuItem_Click);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -377,12 +380,28 @@
 			this.lblTitle.TabIndex = 26;
 			this.lblTitle.Text = "BLACKJACK";
 			// 
+			// lblTime
+			// 
+			this.lblTime.AutoSize = true;
+			this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTime.Location = new System.Drawing.Point(656, 120);
+			this.lblTime.Name = "lblTime";
+			this.lblTime.Size = new System.Drawing.Size(28, 25);
+			this.lblTime.TabIndex = 27;
+			this.lblTime.Text = "--";
+			// 
+			// timer1
+			// 
+			this.timer1.Interval = 1000;
+			this.timer1.Tick += new System.EventHandler(this.timer_Tick);
+			// 
 			// BlackJack
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DodgerBlue;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.lblTime);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.lblBlackjack);
 			this.Controls.Add(this.lblDealerCard4);
@@ -454,5 +473,7 @@
 		private System.Windows.Forms.Label lblDealerCard4;
 		private System.Windows.Forms.Label lblBlackjack;
 		private System.Windows.Forms.Label lblTitle;
+		private System.Windows.Forms.Label lblTime;
+		private System.Windows.Forms.Timer timer1;
 	}
 }

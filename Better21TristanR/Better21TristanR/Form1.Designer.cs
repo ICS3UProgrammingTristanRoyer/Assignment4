@@ -1,4 +1,4 @@
-﻿namespace Simplified21TristanR
+﻿namespace Better21TristanR
 {
 	partial class Form1
 	{

@@ -1,0 +1,12 @@
+C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\bin\Debug\Better21TristanR.exe.config
+C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\bin\Debug\Better21TristanR.exe
+C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\bin\Debug\Better21TristanR.pdb
+C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.csprojAssemblyReference.cache
+C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.BlackJack.resources
+C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.Form1.resources
+C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.Form2.resources
+C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.Properties.Resources.resources
+C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.csproj.GenerateResource.cache
+C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.csproj.CoreCompileInputs.cache
+C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.exe
+C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.pdb

@@ -17,12 +17,14 @@ using System.Windows.Forms;
 using System.Media;
 using System.Threading;
 
-namespace Simplified21TristanR
+
+namespace Better21TristanR
 {
 	public partial class BlackJack : Form
 	{
 		// allows sound source:(https://stackoverflow.com/questions/18949385/c-sharp-sound-effect-added)
 		System.Media.SoundPlayer backSound = new System.Media.SoundPlayer();
+
 
 		// declare global variables
 		int MIN_CARD = 1;
@@ -56,8 +58,9 @@ namespace Simplified21TristanR
 		???*/
 		public BlackJack()
 		{
-			// gives the variable " backSound" the casino sound file
-			backSound.SoundLocation = "Casino.wav";
+
+		// gives the variable " backSound" the casino sound file
+		backSound.SoundLocation = "Casino.wav";
 
 
 
@@ -88,8 +91,14 @@ namespace Simplified21TristanR
 
 
 		}
+		private void timer_Tick(object sender, EventArgs e)
+		{
+			lblTime.Text = DateTime.Now.ToString("HH:mm:ss tt");
 
+		}
 
+		
+	   
 		private void btnHit_Click(object sender, EventArgs e)
 		{
 			// declare local variables and assign values and update text.
@@ -402,10 +411,14 @@ namespace Simplified21TristanR
 				Earnings = bet * 1 / 2;
 				// converts the earnings to an int preventing decimals.
 				intEarnings = Convert.ToInt32(Earnings);
+				timer1.Start();
+
 			}
 			else if (nudBetAmount.Value > balance)
+			{
 				// if the bet is over the balance display an error message.
 				this.lblBetError.Text = "Your balance is too low";
+			}
 
 
 		}
@@ -456,9 +469,7 @@ namespace Simplified21TristanR
 			lblBetError.Text = "--";
 			playerCardTotal = playerCardTotal * 0;
 			dealerCardTotal = dealerCardTotal * 0;
-
-
-
+			
 
 		}
 
@@ -494,6 +505,9 @@ namespace Simplified21TristanR
 			lblBetError.Text = "--";
 			balance = balance * 0 + 100;
 			lblBalance.Text = String.Format("CA${0:0.00}", balance);
+			this.Hide();
+			Form2 frm2 = new Form2();
+			frm2.ShowDialog();
 
 		}
 	}
