@@ -24,6 +24,10 @@ namespace Better21TristanR
 	{
 		// allows sound source:(https://stackoverflow.com/questions/18949385/c-sharp-sound-effect-added)
 		System.Media.SoundPlayer backSound = new System.Media.SoundPlayer();
+		System.Media.SoundPlayer shuffleSound = new System.Media.SoundPlayer();
+
+
+
 
 
 		// declare global variables
@@ -42,25 +46,26 @@ namespace Better21TristanR
 		int dealerCardTotal;
 		double Earnings;
 		int intEarnings;
+		bool hard = false;
+		bool timerOn = false;
+
+		// creates the list where I will contain all my card images 
+		List<Image> listOfCards = new List<Image>();
 
 		// allows random function to be used.
 		Random rnd = new Random();
 
 
 
-		/*????? 
 
-		card 1 = ChangeCard(picbox , index)
-
-
-
-
-		???*/
 		public BlackJack()
 		{
 
-		// gives the variable " backSound" the casino sound file
-		backSound.SoundLocation = "Casino.wav";
+			// gives the variable " backSound" the casino sound file
+			backSound.SoundLocation = "Casino.wav";
+
+			// gives the variable "shuffleSound" the shuffle sound file
+			shuffleSound.SoundLocation = "shuffle.wav";
 
 
 
@@ -91,6 +96,112 @@ namespace Better21TristanR
 
 
 		}
+
+		private void StartTimer()
+		{
+			if (timerOn == true)
+
+			{
+				for (int counter = 10; counter > 0; counter--)
+					if (timerOn == true)
+
+					{
+						lblTimer.Text = "Time Left:" + counter;
+					}
+				MessageBox.Show(lblWinner.Text + "Your balance is now:" + balance);
+				lblWinner.Text = "you Lose";
+				timerOn = false;
+				// show the deal values 
+				lblDealerTotal.Show();
+				lblDealerCard1.Show();
+				lblDealerCard2.Show();
+				lblDealerCard3.Show();
+				// hide the buttons for the user's choices.
+				this.btnHit.Hide();
+				this.btnStay.Hide();
+				this.btnDoubleDown.Hide();
+				this.button1.Hide();
+			}
+
+
+
+
+		}
+
+		private void ShuffleCards(ref List<Image> theListOfCards)
+		{
+			// plays the shuffle sound
+			shuffleSound.Play();
+
+			theListOfCards.Insert(0, Properties.Resources.heart1);
+			theListOfCards.Insert(1, Properties.Resources.heart1);
+			theListOfCards.Insert(2, Properties.Resources.heart1);
+			theListOfCards.Insert(3, Properties.Resources.heart1);			
+			theListOfCards.Insert(4, Properties.Resources.heart1);
+			theListOfCards.Insert(5, Properties.Resources.heart1);
+			theListOfCards.Insert(6, Properties.Resources.heart1);
+			theListOfCards.Insert(7, Properties.Resources.heart1);
+			theListOfCards.Insert(8, Properties.Resources.heart1);
+			theListOfCards.Insert(9, Properties.Resources.heart1);
+			theListOfCards.Insert(10, Properties.Resources.heart1);
+			theListOfCards.Insert(11, Properties.Resources.heart1);
+			theListOfCards.Insert(12, Properties.Resources.heart1);
+			theListOfCards.Insert(13, Properties.Resources.heart1);
+			theListOfCards.Insert(14, Properties.Resources.heart1);
+			theListOfCards.Insert(15, Properties.Resources.heart1);
+			theListOfCards.Insert(16, Properties.Resources.heart1);
+			theListOfCards.Insert(17, Properties.Resources.heart1);
+			theListOfCards.Insert(18, Properties.Resources.heart1);
+			theListOfCards.Insert(19, Properties.Resources.heart1);
+			theListOfCards.Insert(20, Properties.Resources.heart1);
+			theListOfCards.Insert(21, Properties.Resources.heart1);
+			theListOfCards.Insert(22, Properties.Resources.heart1);
+			theListOfCards.Insert(23, Properties.Resources.heart1);
+			theListOfCards.Insert(24, Properties.Resources.heart1);
+			theListOfCards.Insert(25, Properties.Resources.heart1);
+			theListOfCards.Insert(26, Properties.Resources.heart1);
+			theListOfCards.Insert(27, Properties.Resources.heart1);
+			theListOfCards.Insert(28, Properties.Resources.heart1);
+			theListOfCards.Insert(29, Properties.Resources.heart1);
+			theListOfCards.Insert(30, Properties.Resources.heart1);
+			theListOfCards.Insert(31, Properties.Resources.heart1);
+			theListOfCards.Insert(32, Properties.Resources.heart1);
+			theListOfCards.Insert(33, Properties.Resources.heart1);
+			theListOfCards.Insert(34, Properties.Resources.heart1);
+			theListOfCards.Insert(35, Properties.Resources.heart1);
+			theListOfCards.Insert(36, Properties.Resources.heart1);
+			theListOfCards.Insert(37, Properties.Resources.heart1);
+			theListOfCards.Insert(38, Properties.Resources.heart1);
+			theListOfCards.Insert(39, Properties.Resources.heart1);
+			theListOfCards.Insert(40, Properties.Resources.heart1);
+			theListOfCards.Insert(41, Properties.Resources.heart1);
+			theListOfCards.Insert(42, Properties.Resources.heart1);
+			theListOfCards.Insert(43, Properties.Resources.heart1);
+			theListOfCards.Insert(44, Properties.Resources.heart1);
+			theListOfCards.Insert(45, Properties.Resources.heart1);
+			theListOfCards.Insert(46, Properties.Resources.heart1);
+			theListOfCards.Insert(47, Properties.Resources.heart1);
+			theListOfCards.Insert(48, Properties.Resources.heart1);
+			theListOfCards.Insert(49, Properties.Resources.heart1);
+			theListOfCards.Insert(50, Properties.Resources.heart1);
+			theListOfCards.Insert(51, Properties.Resources.heart1);
+			theListOfCards.Insert(52, Properties.Resources.heart1);
+	
+
+
+
+
+
+
+
+
+
+		}
+		//private int ChangeCard (ref List<Image>theListOfCards, thePictureBox , theIndex)
+		//{
+
+
+		//}
 		private void timer_Tick(object sender, EventArgs e)
 		{
 			lblTime.Text = DateTime.Now.ToString("HH:mm:ss tt");
@@ -175,6 +286,8 @@ namespace Better21TristanR
 
 			// hides the bet button
 			this.button1.Hide();
+			MessageBox.Show(lblWinner.Text + "Your balance is now:" + balance);
+
 
 		}
 
@@ -265,6 +378,7 @@ namespace Better21TristanR
 			}
 			// hides the bet button.
 			this.button1.Hide();
+			MessageBox.Show(lblWinner.Text + "Your balance is now:" + balance);
 
 
 		}
@@ -312,15 +426,19 @@ namespace Better21TristanR
 			if (playerCardTotal > 21)
 			{
 				lblWinner.Text = "you Lose";
+				MessageBox.Show(lblWinner.Text + "And the change to the balance is: -" + bet);
+
 			}
 			else if (dealerCardTotal > 21)
 			{
 				lblWinner.Text = "you win";
 				balance = intEarnings + balance + bet;
+
 			}
 			else if (playerCardTotal == dealerCardTotal)
 			{
 				lblWinner.Text = "You tied , dealer wins.";
+
 
 			}
 			else if (playerCardTotal > dealerCardTotal)
@@ -332,6 +450,7 @@ namespace Better21TristanR
 			else if (playerCardTotal < dealerCardTotal)
 			{
 				lblWinner.Text = "you Lose";
+
 			}
 			lblBalance.Text = String.Format("CA${0:0.00}", balance);
 
@@ -341,6 +460,8 @@ namespace Better21TristanR
 			}
 			// hides the bet button.
 			this.button1.Hide();
+			MessageBox.Show(lblWinner.Text + "Your balance is now:" + balance);
+
 
 
 
@@ -377,6 +498,8 @@ namespace Better21TristanR
 			// if the bet is less than or equal to the balance of the user execute the functions.
 			if (this.nudBetAmount.Value <= balance)
 			{
+				// bool to let the timer start
+				timerOn = true;
 				//makes the bet
 				bet = bet + (int)(this.nudBetAmount.Value);
 				// removes the bet from the balance 
@@ -412,6 +535,11 @@ namespace Better21TristanR
 				// converts the earnings to an int preventing decimals.
 				intEarnings = Convert.ToInt32(Earnings);
 				timer1.Start();
+				if (hard == true)
+				{
+					StartTimer()
+				
+				}
 
 			}
 			else if (nudBetAmount.Value > balance)
@@ -509,6 +637,31 @@ namespace Better21TristanR
 			Form2 frm2 = new Form2();
 			frm2.ShowDialog();
 
+		}
+
+		private void lblTime_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void pictureBox1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void challengingToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			hard = true;
+		}
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void regularToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			hard = false;
 		}
 	}
 }

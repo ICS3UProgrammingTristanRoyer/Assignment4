@@ -64,15 +64,38 @@
 			this.lblTitle = new System.Windows.Forms.Label();
 			this.lblTime = new System.Windows.Forms.Label();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.picCard1 = new System.Windows.Forms.PictureBox();
+			this.picCard2 = new System.Windows.Forms.PictureBox();
+			this.picCard3 = new System.Windows.Forms.PictureBox();
+			this.picDealerCard1 = new System.Windows.Forms.PictureBox();
+			this.picDealerCard2 = new System.Windows.Forms.PictureBox();
+			this.picDealerCard3 = new System.Windows.Forms.PictureBox();
+			this.picDealerCard4 = new System.Windows.Forms.PictureBox();
+			this.difficultyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.regularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.challengingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.lblTimer = new System.Windows.Forms.Label();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudBetAmount)).BeginInit();
+			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picCard1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picCard2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picCard3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picDealerCard1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picDealerCard2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picDealerCard3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picDealerCard4)).BeginInit();
+			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem,
-            this.musicToolStripMenuItem});
+            this.musicToolStripMenuItem,
+            this.difficultyToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -92,21 +115,21 @@
 			// newGameToolStripMenuItem
 			// 
 			this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-			this.newGameToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+			this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.newGameToolStripMenuItem.Text = "New Game";
 			this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
 			// 
 			// resetProgressToolStripMenuItem
 			// 
 			this.resetProgressToolStripMenuItem.Name = "resetProgressToolStripMenuItem";
-			this.resetProgressToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+			this.resetProgressToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.resetProgressToolStripMenuItem.Text = "Reset Progress";
 			this.resetProgressToolStripMenuItem.Click += new System.EventHandler(this.resetProgressToolStripMenuItem_Click);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -122,21 +145,21 @@
 			// resumeToolStripMenuItem
 			// 
 			this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
-			this.resumeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+			this.resumeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.resumeToolStripMenuItem.Text = "Resume";
 			this.resumeToolStripMenuItem.Click += new System.EventHandler(this.resumeToolStripMenuItem_Click);
 			// 
 			// muteToolStripMenuItem
 			// 
 			this.muteToolStripMenuItem.Name = "muteToolStripMenuItem";
-			this.muteToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+			this.muteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.muteToolStripMenuItem.Text = "Mute";
 			this.muteToolStripMenuItem.Click += new System.EventHandler(this.muteToolStripMenuItem_Click);
 			// 
 			// lblError
 			// 
 			this.lblError.AutoSize = true;
-			this.lblError.Location = new System.Drawing.Point(266, 374);
+			this.lblError.Location = new System.Drawing.Point(266, 495);
 			this.lblError.Name = "lblError";
 			this.lblError.Size = new System.Drawing.Size(13, 13);
 			this.lblError.TabIndex = 1;
@@ -145,7 +168,7 @@
 			// lblWinner
 			// 
 			this.lblWinner.AutoSize = true;
-			this.lblWinner.Location = new System.Drawing.Point(266, 402);
+			this.lblWinner.Location = new System.Drawing.Point(266, 524);
 			this.lblWinner.Name = "lblWinner";
 			this.lblWinner.Size = new System.Drawing.Size(13, 13);
 			this.lblWinner.TabIndex = 2;
@@ -155,7 +178,7 @@
 			// 
 			this.lblDealerTotal.AutoSize = true;
 			this.lblDealerTotal.BackColor = System.Drawing.Color.HotPink;
-			this.lblDealerTotal.Location = new System.Drawing.Point(7, 235);
+			this.lblDealerTotal.Location = new System.Drawing.Point(12, 302);
 			this.lblDealerTotal.Name = "lblDealerTotal";
 			this.lblDealerTotal.Size = new System.Drawing.Size(68, 13);
 			this.lblDealerTotal.TabIndex = 4;
@@ -185,7 +208,7 @@
 			// btnHit
 			// 
 			this.btnHit.BackColor = System.Drawing.Color.Lime;
-			this.btnHit.Location = new System.Drawing.Point(144, 336);
+			this.btnHit.Location = new System.Drawing.Point(164, 469);
 			this.btnHit.Name = "btnHit";
 			this.btnHit.Size = new System.Drawing.Size(75, 23);
 			this.btnHit.TabIndex = 7;
@@ -196,7 +219,7 @@
 			// btnDoubleDown
 			// 
 			this.btnDoubleDown.BackColor = System.Drawing.Color.Green;
-			this.btnDoubleDown.Location = new System.Drawing.Point(269, 336);
+			this.btnDoubleDown.Location = new System.Drawing.Point(269, 469);
 			this.btnDoubleDown.Name = "btnDoubleDown";
 			this.btnDoubleDown.Size = new System.Drawing.Size(80, 23);
 			this.btnDoubleDown.TabIndex = 8;
@@ -207,7 +230,7 @@
 			// btnStay
 			// 
 			this.btnStay.BackColor = System.Drawing.Color.Aqua;
-			this.btnStay.Location = new System.Drawing.Point(414, 336);
+			this.btnStay.Location = new System.Drawing.Point(392, 469);
 			this.btnStay.Name = "btnStay";
 			this.btnStay.Size = new System.Drawing.Size(75, 23);
 			this.btnStay.TabIndex = 9;
@@ -251,7 +274,7 @@
 			// 
 			this.lblCard1.AutoSize = true;
 			this.lblCard1.BackColor = System.Drawing.Color.LightCyan;
-			this.lblCard1.Location = new System.Drawing.Point(12, 148);
+			this.lblCard1.Location = new System.Drawing.Point(196, 32);
 			this.lblCard1.Name = "lblCard1";
 			this.lblCard1.Size = new System.Drawing.Size(43, 13);
 			this.lblCard1.TabIndex = 13;
@@ -262,7 +285,7 @@
 			// 
 			this.lblCard2.AutoSize = true;
 			this.lblCard2.BackColor = System.Drawing.Color.LightCyan;
-			this.lblCard2.Location = new System.Drawing.Point(86, 148);
+			this.lblCard2.Location = new System.Drawing.Point(245, 32);
 			this.lblCard2.Name = "lblCard2";
 			this.lblCard2.Size = new System.Drawing.Size(43, 13);
 			this.lblCard2.TabIndex = 14;
@@ -272,7 +295,7 @@
 			// 
 			this.lblCard3.AutoSize = true;
 			this.lblCard3.BackColor = System.Drawing.Color.LightCyan;
-			this.lblCard3.Location = new System.Drawing.Point(167, 148);
+			this.lblCard3.Location = new System.Drawing.Point(294, 32);
 			this.lblCard3.Name = "lblCard3";
 			this.lblCard3.Size = new System.Drawing.Size(43, 13);
 			this.lblCard3.TabIndex = 15;
@@ -294,7 +317,7 @@
 			this.label5.AutoSize = true;
 			this.label5.BackColor = System.Drawing.Color.Red;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(6, 194);
+			this.label5.Location = new System.Drawing.Point(12, 269);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(62, 20);
 			this.label5.TabIndex = 17;
@@ -304,7 +327,7 @@
 			// 
 			this.lblDealerCard1.AutoSize = true;
 			this.lblDealerCard1.BackColor = System.Drawing.Color.LightCyan;
-			this.lblDealerCard1.Location = new System.Drawing.Point(12, 269);
+			this.lblDealerCard1.Location = new System.Drawing.Point(161, 63);
 			this.lblDealerCard1.Name = "lblDealerCard1";
 			this.lblDealerCard1.Size = new System.Drawing.Size(86, 13);
 			this.lblDealerCard1.TabIndex = 18;
@@ -314,7 +337,7 @@
 			// 
 			this.lblDealerCard2.AutoSize = true;
 			this.lblDealerCard2.BackColor = System.Drawing.Color.LightCyan;
-			this.lblDealerCard2.Location = new System.Drawing.Point(105, 269);
+			this.lblDealerCard2.Location = new System.Drawing.Point(263, 63);
 			this.lblDealerCard2.Name = "lblDealerCard2";
 			this.lblDealerCard2.Size = new System.Drawing.Size(86, 13);
 			this.lblDealerCard2.TabIndex = 19;
@@ -324,7 +347,7 @@
 			// 
 			this.lblDealerCard3.AutoSize = true;
 			this.lblDealerCard3.BackColor = System.Drawing.Color.LightCyan;
-			this.lblDealerCard3.Location = new System.Drawing.Point(201, 269);
+			this.lblDealerCard3.Location = new System.Drawing.Point(355, 63);
 			this.lblDealerCard3.Name = "lblDealerCard3";
 			this.lblDealerCard3.Size = new System.Drawing.Size(86, 13);
 			this.lblDealerCard3.TabIndex = 20;
@@ -355,7 +378,7 @@
 			// 
 			this.lblDealerCard4.AutoSize = true;
 			this.lblDealerCard4.BackColor = System.Drawing.Color.LightCyan;
-			this.lblDealerCard4.Location = new System.Drawing.Point(302, 269);
+			this.lblDealerCard4.Location = new System.Drawing.Point(447, 63);
 			this.lblDealerCard4.Name = "lblDealerCard4";
 			this.lblDealerCard4.Size = new System.Drawing.Size(86, 13);
 			this.lblDealerCard4.TabIndex = 23;
@@ -364,7 +387,7 @@
 			// lblBlackjack
 			// 
 			this.lblBlackjack.AutoSize = true;
-			this.lblBlackjack.Location = new System.Drawing.Point(266, 428);
+			this.lblBlackjack.Location = new System.Drawing.Point(266, 547);
 			this.lblBlackjack.Name = "lblBlackjack";
 			this.lblBlackjack.Size = new System.Drawing.Size(13, 13);
 			this.lblBlackjack.TabIndex = 24;
@@ -384,24 +407,149 @@
 			// 
 			this.lblTime.AutoSize = true;
 			this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTime.Location = new System.Drawing.Point(656, 120);
+			this.lblTime.Location = new System.Drawing.Point(6, 16);
 			this.lblTime.Name = "lblTime";
 			this.lblTime.Size = new System.Drawing.Size(28, 25);
 			this.lblTime.TabIndex = 27;
 			this.lblTime.Text = "--";
+			this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
 			// 
 			// timer1
 			// 
 			this.timer1.Interval = 1000;
 			this.timer1.Tick += new System.EventHandler(this.timer_Tick);
 			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.lblTime);
+			this.groupBox1.Location = new System.Drawing.Point(631, 136);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(169, 53);
+			this.groupBox1.TabIndex = 28;
+			this.groupBox1.TabStop = false;
+			// 
+			// picCard1
+			// 
+			this.picCard1.Image = global::Better21TristanR.Properties.Resources.spadeQ;
+			this.picCard1.Location = new System.Drawing.Point(0, 136);
+			this.picCard1.Name = "picCard1";
+			this.picCard1.Size = new System.Drawing.Size(98, 130);
+			this.picCard1.TabIndex = 29;
+			this.picCard1.TabStop = false;
+			// 
+			// picCard2
+			// 
+			this.picCard2.Image = global::Better21TristanR.Properties.Resources.spadeQ;
+			this.picCard2.Location = new System.Drawing.Point(132, 136);
+			this.picCard2.Name = "picCard2";
+			this.picCard2.Size = new System.Drawing.Size(98, 130);
+			this.picCard2.TabIndex = 30;
+			this.picCard2.TabStop = false;
+			this.picCard2.Click += new System.EventHandler(this.pictureBox1_Click);
+			// 
+			// picCard3
+			// 
+			this.picCard3.Image = global::Better21TristanR.Properties.Resources.spadeQ;
+			this.picCard3.Location = new System.Drawing.Point(269, 136);
+			this.picCard3.Name = "picCard3";
+			this.picCard3.Size = new System.Drawing.Size(98, 130);
+			this.picCard3.TabIndex = 31;
+			this.picCard3.TabStop = false;
+			// 
+			// picDealerCard1
+			// 
+			this.picDealerCard1.Image = global::Better21TristanR.Properties.Resources.spadeQ;
+			this.picDealerCard1.Location = new System.Drawing.Point(0, 333);
+			this.picDealerCard1.Name = "picDealerCard1";
+			this.picDealerCard1.Size = new System.Drawing.Size(98, 130);
+			this.picDealerCard1.TabIndex = 32;
+			this.picDealerCard1.TabStop = false;
+			// 
+			// picDealerCard2
+			// 
+			this.picDealerCard2.Image = global::Better21TristanR.Properties.Resources.spadeQ;
+			this.picDealerCard2.Location = new System.Drawing.Point(132, 333);
+			this.picDealerCard2.Name = "picDealerCard2";
+			this.picDealerCard2.Size = new System.Drawing.Size(98, 130);
+			this.picDealerCard2.TabIndex = 33;
+			this.picDealerCard2.TabStop = false;
+			// 
+			// picDealerCard3
+			// 
+			this.picDealerCard3.Image = global::Better21TristanR.Properties.Resources.spadeQ;
+			this.picDealerCard3.Location = new System.Drawing.Point(251, 333);
+			this.picDealerCard3.Name = "picDealerCard3";
+			this.picDealerCard3.Size = new System.Drawing.Size(98, 130);
+			this.picDealerCard3.TabIndex = 34;
+			this.picDealerCard3.TabStop = false;
+			// 
+			// picDealerCard4
+			// 
+			this.picDealerCard4.Image = global::Better21TristanR.Properties.Resources.spadeQ;
+			this.picDealerCard4.Location = new System.Drawing.Point(392, 333);
+			this.picDealerCard4.Name = "picDealerCard4";
+			this.picDealerCard4.Size = new System.Drawing.Size(98, 130);
+			this.picDealerCard4.TabIndex = 35;
+			this.picDealerCard4.TabStop = false;
+			// 
+			// difficultyToolStripMenuItem
+			// 
+			this.difficultyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.regularToolStripMenuItem,
+            this.challengingToolStripMenuItem});
+			this.difficultyToolStripMenuItem.Name = "difficultyToolStripMenuItem";
+			this.difficultyToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+			this.difficultyToolStripMenuItem.Text = "Difficulty";
+			// 
+			// regularToolStripMenuItem
+			// 
+			this.regularToolStripMenuItem.Name = "regularToolStripMenuItem";
+			this.regularToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.regularToolStripMenuItem.Text = "Regular";
+			this.regularToolStripMenuItem.Click += new System.EventHandler(this.regularToolStripMenuItem_Click);
+			// 
+			// challengingToolStripMenuItem
+			// 
+			this.challengingToolStripMenuItem.Name = "challengingToolStripMenuItem";
+			this.challengingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.challengingToolStripMenuItem.Text = "Challenging";
+			this.challengingToolStripMenuItem.Click += new System.EventHandler(this.challengingToolStripMenuItem_Click);
+			// 
+			// lblTimer
+			// 
+			this.lblTimer.AutoSize = true;
+			this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTimer.Location = new System.Drawing.Point(6, 16);
+			this.lblTimer.Name = "lblTimer";
+			this.lblTimer.Size = new System.Drawing.Size(24, 24);
+			this.lblTimer.TabIndex = 36;
+			this.lblTimer.Text = "--";
+			this.lblTimer.Click += new System.EventHandler(this.label1_Click);
+			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.lblTimer);
+			this.groupBox2.Location = new System.Drawing.Point(631, 205);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(169, 45);
+			this.groupBox2.TabIndex = 37;
+			this.groupBox2.TabStop = false;
+			// 
 			// BlackJack
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DodgerBlue;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.lblTime);
+			this.ClientSize = new System.Drawing.Size(800, 560);
+			this.Controls.Add(this.groupBox2);
+			this.Controls.Add(this.picDealerCard4);
+			this.Controls.Add(this.picDealerCard3);
+			this.Controls.Add(this.picDealerCard2);
+			this.Controls.Add(this.picDealerCard1);
+			this.Controls.Add(this.picCard3);
+			this.Controls.Add(this.picCard2);
+			this.Controls.Add(this.picCard1);
+			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.lblBlackjack);
 			this.Controls.Add(this.lblDealerCard4);
@@ -434,6 +582,17 @@
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudBetAmount)).EndInit();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picCard1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picCard2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picCard3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picDealerCard1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picDealerCard2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picDealerCard3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picDealerCard4)).EndInit();
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox2.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -475,5 +634,18 @@
 		private System.Windows.Forms.Label lblTitle;
 		private System.Windows.Forms.Label lblTime;
 		private System.Windows.Forms.Timer timer1;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.PictureBox picCard1;
+		private System.Windows.Forms.PictureBox picCard2;
+		private System.Windows.Forms.PictureBox picCard3;
+		private System.Windows.Forms.PictureBox picDealerCard1;
+		private System.Windows.Forms.PictureBox picDealerCard2;
+		private System.Windows.Forms.PictureBox picDealerCard3;
+		private System.Windows.Forms.PictureBox picDealerCard4;
+		private System.Windows.Forms.ToolStripMenuItem difficultyToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem regularToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem challengingToolStripMenuItem;
+		private System.Windows.Forms.Label lblTimer;
+		private System.Windows.Forms.GroupBox groupBox2;
 	}
 }
