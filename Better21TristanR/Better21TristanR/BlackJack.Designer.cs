@@ -38,6 +38,9 @@
 			this.musicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.resumeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.muteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.difficultyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.regularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.challengingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.lblError = new System.Windows.Forms.Label();
 			this.lblWinner = new System.Windows.Forms.Label();
 			this.lblDealerTotal = new System.Windows.Forms.Label();
@@ -72,9 +75,6 @@
 			this.picDealerCard2 = new System.Windows.Forms.PictureBox();
 			this.picDealerCard3 = new System.Windows.Forms.PictureBox();
 			this.picDealerCard4 = new System.Windows.Forms.PictureBox();
-			this.difficultyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.regularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.challengingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.lblTimer = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.menuStrip1.SuspendLayout();
@@ -115,21 +115,21 @@
 			// newGameToolStripMenuItem
 			// 
 			this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-			this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.newGameToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
 			this.newGameToolStripMenuItem.Text = "New Game";
 			this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
 			// 
 			// resetProgressToolStripMenuItem
 			// 
 			this.resetProgressToolStripMenuItem.Name = "resetProgressToolStripMenuItem";
-			this.resetProgressToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.resetProgressToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
 			this.resetProgressToolStripMenuItem.Text = "Reset Progress";
 			this.resetProgressToolStripMenuItem.Click += new System.EventHandler(this.resetProgressToolStripMenuItem_Click);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -145,16 +145,39 @@
 			// resumeToolStripMenuItem
 			// 
 			this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
-			this.resumeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.resumeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
 			this.resumeToolStripMenuItem.Text = "Resume";
 			this.resumeToolStripMenuItem.Click += new System.EventHandler(this.resumeToolStripMenuItem_Click);
 			// 
 			// muteToolStripMenuItem
 			// 
 			this.muteToolStripMenuItem.Name = "muteToolStripMenuItem";
-			this.muteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.muteToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
 			this.muteToolStripMenuItem.Text = "Mute";
 			this.muteToolStripMenuItem.Click += new System.EventHandler(this.muteToolStripMenuItem_Click);
+			// 
+			// difficultyToolStripMenuItem
+			// 
+			this.difficultyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.regularToolStripMenuItem,
+            this.challengingToolStripMenuItem});
+			this.difficultyToolStripMenuItem.Name = "difficultyToolStripMenuItem";
+			this.difficultyToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+			this.difficultyToolStripMenuItem.Text = "Difficulty";
+			// 
+			// regularToolStripMenuItem
+			// 
+			this.regularToolStripMenuItem.Name = "regularToolStripMenuItem";
+			this.regularToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+			this.regularToolStripMenuItem.Text = "Regular";
+			this.regularToolStripMenuItem.Click += new System.EventHandler(this.regularToolStripMenuItem_Click);
+			// 
+			// challengingToolStripMenuItem
+			// 
+			this.challengingToolStripMenuItem.Name = "challengingToolStripMenuItem";
+			this.challengingToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+			this.challengingToolStripMenuItem.Text = "Challenging";
+			this.challengingToolStripMenuItem.Click += new System.EventHandler(this.challengingToolStripMenuItem_Click);
 			// 
 			// lblError
 			// 
@@ -274,7 +297,7 @@
 			// 
 			this.lblCard1.AutoSize = true;
 			this.lblCard1.BackColor = System.Drawing.Color.LightCyan;
-			this.lblCard1.Location = new System.Drawing.Point(196, 32);
+			this.lblCard1.Location = new System.Drawing.Point(161, 32);
 			this.lblCard1.Name = "lblCard1";
 			this.lblCard1.Size = new System.Drawing.Size(43, 13);
 			this.lblCard1.TabIndex = 13;
@@ -285,7 +308,7 @@
 			// 
 			this.lblCard2.AutoSize = true;
 			this.lblCard2.BackColor = System.Drawing.Color.LightCyan;
-			this.lblCard2.Location = new System.Drawing.Point(245, 32);
+			this.lblCard2.Location = new System.Drawing.Point(263, 32);
 			this.lblCard2.Name = "lblCard2";
 			this.lblCard2.Size = new System.Drawing.Size(43, 13);
 			this.lblCard2.TabIndex = 14;
@@ -295,7 +318,7 @@
 			// 
 			this.lblCard3.AutoSize = true;
 			this.lblCard3.BackColor = System.Drawing.Color.LightCyan;
-			this.lblCard3.Location = new System.Drawing.Point(294, 32);
+			this.lblCard3.Location = new System.Drawing.Point(355, 32);
 			this.lblCard3.Name = "lblCard3";
 			this.lblCard3.Size = new System.Drawing.Size(43, 13);
 			this.lblCard3.TabIndex = 15;
@@ -491,29 +514,6 @@
 			this.picDealerCard4.Size = new System.Drawing.Size(98, 130);
 			this.picDealerCard4.TabIndex = 35;
 			this.picDealerCard4.TabStop = false;
-			// 
-			// difficultyToolStripMenuItem
-			// 
-			this.difficultyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.regularToolStripMenuItem,
-            this.challengingToolStripMenuItem});
-			this.difficultyToolStripMenuItem.Name = "difficultyToolStripMenuItem";
-			this.difficultyToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-			this.difficultyToolStripMenuItem.Text = "Difficulty";
-			// 
-			// regularToolStripMenuItem
-			// 
-			this.regularToolStripMenuItem.Name = "regularToolStripMenuItem";
-			this.regularToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.regularToolStripMenuItem.Text = "Regular";
-			this.regularToolStripMenuItem.Click += new System.EventHandler(this.regularToolStripMenuItem_Click);
-			// 
-			// challengingToolStripMenuItem
-			// 
-			this.challengingToolStripMenuItem.Name = "challengingToolStripMenuItem";
-			this.challengingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.challengingToolStripMenuItem.Text = "Challenging";
-			this.challengingToolStripMenuItem.Click += new System.EventHandler(this.challengingToolStripMenuItem_Click);
 			// 
 			// lblTimer
 			// 

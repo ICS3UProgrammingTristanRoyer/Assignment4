@@ -209,9 +209,12 @@ namespace Better21TristanR
 		}
 		private int ChangeCard (ref List<Image>theListOfCards, thePictureBox , theIndex)
 		{
+			int cardValue;
 			if (theIndex = 1)
 			{
-				thePictureBox
+				thePictureBox.Image = theListOfCards[1]
+				theListOfCards.RemoveAt(1);
+				cardValue = 1;
 			}
 
 
@@ -236,9 +239,7 @@ namespace Better21TristanR
 			const int DEALERMAXIMUM = 2;
 			int dealerChoice;
 			card3 = rnd.Next(MIN_CARD, MAX_CARD + 1);
-			lblCard3.Text = "" + card3;
 			playerCardTotal = card1 + card2 + card3;
-			this.lblCard3.Show();
 			dealerCardTotal = 0;
 			lblPlayerTotal.Text = "Player Total:" + playerCardTotal;
 			dealerChoice = rnd.Next(DEALERMINIMUM, DEALERMAXIMUM + 1);
@@ -255,15 +256,12 @@ namespace Better21TristanR
 				dealerCard4 = rnd.Next(MIN_CARD, MAX_CARD + 1);
 				dealerCardTotal = dealerCardTotal + dealerCard1 + dealerCard2 + dealerCard3 + dealerCard4;
 				lblDealerTotal.Text = "Dealer Total:" + dealerCardTotal;
-				lblDealerCard4.Text = " " + dealerCard4;
-				lblDealerCard4.Show();
+			
 
 			}
 			// show the deal values 
 			lblDealerTotal.Show();
-			lblDealerCard1.Show();
-			lblDealerCard2.Show();
-			lblDealerCard3.Show();
+		
 			// hide the buttons for the user's choices.
 			this.btnHit.Hide();
 			this.btnStay.Hide();
@@ -323,9 +321,9 @@ namespace Better21TristanR
 				// updates the values and text
 				balance = balance - bet;
 				card3 = rnd.Next(MIN_CARD, MAX_CARD + 1);
-				lblCard3.Text = "" + card3;
+				
 				playerCardTotal = card1 + card2 + card3;
-				this.lblCard3.Show();
+				
 				dealerCardTotal = 0;
 				lblPlayerTotal.Text = "Player Total:" + playerCardTotal;
 				dealerChoice = rnd.Next(DEALERMINIMUM, DEALERMAXIMUM + 1);
@@ -426,15 +424,12 @@ namespace Better21TristanR
 				dealerCard4 = rnd.Next(MIN_CARD, MAX_CARD + 1);
 				dealerCardTotal = dealerCardTotal + dealerCard1 + dealerCard2 + dealerCard3 + dealerCard4;
 				lblDealerTotal.Text = "Dealer Total:" + dealerCardTotal;
-				lblDealerCard4.Text = " " + dealerCard4;
-				lblDealerCard4.Show();
+			
 
 			}
 			// show the dealer values
 			lblDealerTotal.Show();
-			lblDealerCard1.Show();
-			lblDealerCard2.Show();
-			lblDealerCard3.Show();
+		
 			// hide the buttons for the user's choices.
 			this.btnHit.Hide();
 			this.btnStay.Hide();
@@ -516,7 +511,6 @@ namespace Better21TristanR
 			if (this.nudBetAmount.Value <= balance)
 			{
 				// bool to let the timer start
-				timerOn = true;
 				//makes the bet
 				bet = bet + (int)(this.nudBetAmount.Value);
 				// removes the bet from the balance 
@@ -524,14 +518,11 @@ namespace Better21TristanR
 				//assigns the random cards and display's their values( dealer's values are hidden.)
 				card1 = rnd.Next(MIN_CARD, MAX_CARD + 1);
 				card2 = rnd.Next(MIN_CARD, MAX_CARD + 1);
-				lblCard1.Text = " " + card1;
-				lblCard2.Text = " " + card2;
+			
 				dealerCard1 = rnd.Next(MIN_CARD, MAX_CARD + 1);
 				dealerCard2 = rnd.Next(MIN_CARD, MAX_CARD + 1);
 				dealerCard3 = rnd.Next(MIN_CARD, MAX_CARD + 1);
-				lblDealerCard1.Text = " " + dealerCard1;
-				lblDealerCard2.Text = " " + dealerCard2;
-				lblDealerCard3.Text = " " + dealerCard3;
+			
 				// updates player card total.
 				playerCardTotal = card1 + card2 + card3;
 				// shows the player card total.
@@ -539,8 +530,7 @@ namespace Better21TristanR
 				// displays the player's card total.
 				lblPlayerTotal.Text = "Player Total:" + playerCardTotal;
 				// shows the cards for the user.
-				this.lblCard1.Show();
-				this.lblCard2.Show();
+				
 				// shows the buttons for the user's options.
 				this.btnHit.Show();
 				this.btnStay.Show();
@@ -591,13 +581,8 @@ namespace Better21TristanR
 			bet = bet * 0;
 			this.btnStay.Hide();
 			this.btnDoubleDown.Hide();
-			this.lblCard1.Hide();
-			this.lblCard2.Hide();
-			this.lblCard3.Hide();
-			this.lblDealerCard1.Hide();
-			this.lblDealerCard2.Hide();
-			this.lblDealerCard3.Hide();
-			this.lblDealerCard4.Hide();
+		
+			
 			this.lblDealerTotal.Hide();
 			this.lblError.Text = "--";
 			this.lblWinner.Text = "--";
@@ -625,13 +610,7 @@ namespace Better21TristanR
 			this.btnHit.Hide();
 			this.btnStay.Hide();
 			this.btnDoubleDown.Hide();
-			this.lblCard1.Hide();
-			this.lblCard2.Hide();
-			this.lblCard3.Hide();
-			this.lblDealerCard1.Hide();
-			this.lblDealerCard2.Hide();
-			this.lblDealerCard3.Hide();
-			this.lblDealerCard4.Hide();
+			
 			this.lblDealerTotal.Hide();
 			this.lblError.Text = "--";
 			this.lblWinner.Text = "--";
@@ -668,6 +647,7 @@ namespace Better21TristanR
 
 		private void challengingToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+			// changes the bool to be true to allow the timer to start making the game more difficult.
 			hard = true;
 		}
 
@@ -678,6 +658,7 @@ namespace Better21TristanR
 
 		private void regularToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+			// changes the bool to be false to change the game to regular mode.
 			hard = false;
 		}
 	}
