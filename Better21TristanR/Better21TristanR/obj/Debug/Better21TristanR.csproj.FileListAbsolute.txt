@@ -10,3 +10,14 @@ C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21Tristan
 C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.csproj.CoreCompileInputs.cache
 C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.exe
 C:\Users\Clayt\Desktop\Assignment 4\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.pdb
+N:\StuShare\Semester 1 - Fall 2018\ICS3U Programming\Royer, Tristan (s450073)\Assignment4\Better21TristanR\Better21TristanR\bin\Debug\Better21TristanR.exe.config
+N:\StuShare\Semester 1 - Fall 2018\ICS3U Programming\Royer, Tristan (s450073)\Assignment4\Better21TristanR\Better21TristanR\bin\Debug\Better21TristanR.exe
+N:\StuShare\Semester 1 - Fall 2018\ICS3U Programming\Royer, Tristan (s450073)\Assignment4\Better21TristanR\Better21TristanR\bin\Debug\Better21TristanR.pdb
+N:\StuShare\Semester 1 - Fall 2018\ICS3U Programming\Royer, Tristan (s450073)\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.csprojResolveAssemblyReference.cache
+N:\StuShare\Semester 1 - Fall 2018\ICS3U Programming\Royer, Tristan (s450073)\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.BlackJack.resources
+N:\StuShare\Semester 1 - Fall 2018\ICS3U Programming\Royer, Tristan (s450073)\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.Form1.resources
+N:\StuShare\Semester 1 - Fall 2018\ICS3U Programming\Royer, Tristan (s450073)\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.Form2.resources
+N:\StuShare\Semester 1 - Fall 2018\ICS3U Programming\Royer, Tristan (s450073)\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.Properties.Resources.resources
+N:\StuShare\Semester 1 - Fall 2018\ICS3U Programming\Royer, Tristan (s450073)\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.csproj.GenerateResource.Cache
+N:\StuShare\Semester 1 - Fall 2018\ICS3U Programming\Royer, Tristan (s450073)\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.exe
+N:\StuShare\Semester 1 - Fall 2018\ICS3U Programming\Royer, Tristan (s450073)\Assignment4\Better21TristanR\Better21TristanR\obj\Debug\Better21TristanR.pdb

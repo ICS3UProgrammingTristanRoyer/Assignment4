@@ -47,7 +47,6 @@ namespace Better21TristanR
 		double Earnings;
 		int intEarnings;
 		bool hard = false;
-		bool timerOn = false;
 
 		// creates the list where I will contain all my card images 
 		List<Image> listOfCards = new List<Image>();
@@ -99,28 +98,39 @@ namespace Better21TristanR
 
 		private void StartTimer()
 		{
-			if (timerOn == true)
+			int theCounter = 10;
 
 			{
-				for (int counter = 10; counter > 0; counter--)
-					if (timerOn == true)
+				for (int counter = 10; counter > 0; counter += -1)
 
 					{
-						lblTimer.Text = "Time Left:" + counter;
-					}
-				MessageBox.Show(lblWinner.Text + "Your balance is now:" + balance);
-				lblWinner.Text = "you Lose";
-				timerOn = false;
-				// show the deal values 
-				lblDealerTotal.Show();
-				lblDealerCard1.Show();
-				lblDealerCard2.Show();
-				lblDealerCard3.Show();
-				// hide the buttons for the user's choices.
-				this.btnHit.Hide();
-				this.btnStay.Hide();
-				this.btnDoubleDown.Hide();
-				this.button1.Hide();
+
+						theCounter = theCounter - 1;
+						lblTimer.Text = "Time Left:" + theCounter;
+						Thread.Sleep(1000);
+						this.Refresh();
+
+
+						if (theCounter == 0)
+						{
+							
+							MessageBox.Show(lblWinner.Text + "Your balance is now:" + balance);
+							lblWinner.Text = "you Lose";
+							
+							// show the deal values 
+							lblDealerTotal.Show();
+							lblDealerCard1.Show();
+							lblDealerCard2.Show();
+							lblDealerCard3.Show();
+							// hide the buttons for the user's choices.
+							this.btnHit.Hide();
+							this.btnStay.Hide();
+							this.btnDoubleDown.Hide();
+							this.button1.Hide();
+						}
+
+				}
+				
 			}
 
 
@@ -134,58 +144,58 @@ namespace Better21TristanR
 			shuffleSound.Play();
 
 			theListOfCards.Insert(0, Properties.Resources.heart1);
-			theListOfCards.Insert(1, Properties.Resources.heart1);
-			theListOfCards.Insert(2, Properties.Resources.heart1);
-			theListOfCards.Insert(3, Properties.Resources.heart1);			
-			theListOfCards.Insert(4, Properties.Resources.heart1);
-			theListOfCards.Insert(5, Properties.Resources.heart1);
-			theListOfCards.Insert(6, Properties.Resources.heart1);
-			theListOfCards.Insert(7, Properties.Resources.heart1);
-			theListOfCards.Insert(8, Properties.Resources.heart1);
-			theListOfCards.Insert(9, Properties.Resources.heart1);
-			theListOfCards.Insert(10, Properties.Resources.heart1);
-			theListOfCards.Insert(11, Properties.Resources.heart1);
-			theListOfCards.Insert(12, Properties.Resources.heart1);
-			theListOfCards.Insert(13, Properties.Resources.heart1);
-			theListOfCards.Insert(14, Properties.Resources.heart1);
-			theListOfCards.Insert(15, Properties.Resources.heart1);
-			theListOfCards.Insert(16, Properties.Resources.heart1);
-			theListOfCards.Insert(17, Properties.Resources.heart1);
-			theListOfCards.Insert(18, Properties.Resources.heart1);
-			theListOfCards.Insert(19, Properties.Resources.heart1);
-			theListOfCards.Insert(20, Properties.Resources.heart1);
-			theListOfCards.Insert(21, Properties.Resources.heart1);
-			theListOfCards.Insert(22, Properties.Resources.heart1);
-			theListOfCards.Insert(23, Properties.Resources.heart1);
-			theListOfCards.Insert(24, Properties.Resources.heart1);
-			theListOfCards.Insert(25, Properties.Resources.heart1);
-			theListOfCards.Insert(26, Properties.Resources.heart1);
-			theListOfCards.Insert(27, Properties.Resources.heart1);
-			theListOfCards.Insert(28, Properties.Resources.heart1);
-			theListOfCards.Insert(29, Properties.Resources.heart1);
-			theListOfCards.Insert(30, Properties.Resources.heart1);
-			theListOfCards.Insert(31, Properties.Resources.heart1);
-			theListOfCards.Insert(32, Properties.Resources.heart1);
-			theListOfCards.Insert(33, Properties.Resources.heart1);
-			theListOfCards.Insert(34, Properties.Resources.heart1);
-			theListOfCards.Insert(35, Properties.Resources.heart1);
-			theListOfCards.Insert(36, Properties.Resources.heart1);
-			theListOfCards.Insert(37, Properties.Resources.heart1);
-			theListOfCards.Insert(38, Properties.Resources.heart1);
-			theListOfCards.Insert(39, Properties.Resources.heart1);
-			theListOfCards.Insert(40, Properties.Resources.heart1);
-			theListOfCards.Insert(41, Properties.Resources.heart1);
-			theListOfCards.Insert(42, Properties.Resources.heart1);
-			theListOfCards.Insert(43, Properties.Resources.heart1);
-			theListOfCards.Insert(44, Properties.Resources.heart1);
-			theListOfCards.Insert(45, Properties.Resources.heart1);
-			theListOfCards.Insert(46, Properties.Resources.heart1);
-			theListOfCards.Insert(47, Properties.Resources.heart1);
-			theListOfCards.Insert(48, Properties.Resources.heart1);
-			theListOfCards.Insert(49, Properties.Resources.heart1);
-			theListOfCards.Insert(50, Properties.Resources.heart1);
-			theListOfCards.Insert(51, Properties.Resources.heart1);
-			theListOfCards.Insert(52, Properties.Resources.heart1);
+			theListOfCards.Insert(1, Properties.Resources.heart2);
+			theListOfCards.Insert(2, Properties.Resources.heart3);
+			theListOfCards.Insert(3, Properties.Resources.heart4);			
+			theListOfCards.Insert(4, Properties.Resources.heart5);
+			theListOfCards.Insert(5, Properties.Resources.heart6);
+			theListOfCards.Insert(6, Properties.Resources.heart7);
+			theListOfCards.Insert(7, Properties.Resources.heart8);
+			theListOfCards.Insert(8, Properties.Resources.heart9);
+			theListOfCards.Insert(9, Properties.Resources.heart10);
+			theListOfCards.Insert(10, Properties.Resources.heartJ);
+			theListOfCards.Insert(11, Properties.Resources.heartQ);
+			theListOfCards.Insert(12, Properties.Resources.heartK);
+			theListOfCards.Insert(13, Properties.Resources.club1);
+			theListOfCards.Insert(14, Properties.Resources.club2);
+			theListOfCards.Insert(15, Properties.Resources.club3);
+			theListOfCards.Insert(16, Properties.Resources.club4);
+			theListOfCards.Insert(17, Properties.Resources.club5);
+			theListOfCards.Insert(18, Properties.Resources.club6);
+			theListOfCards.Insert(19, Properties.Resources.club7);
+			theListOfCards.Insert(20, Properties.Resources.club8);
+			theListOfCards.Insert(21, Properties.Resources.club9);
+			theListOfCards.Insert(22, Properties.Resources.club10);
+			theListOfCards.Insert(23, Properties.Resources.clubJ);
+			theListOfCards.Insert(24, Properties.Resources.clubQ);
+			theListOfCards.Insert(25, Properties.Resources.clubK);
+			theListOfCards.Insert(26, Properties.Resources.diamond1);
+			theListOfCards.Insert(27, Properties.Resources.diamond2);
+			theListOfCards.Insert(28, Properties.Resources.diamond3);
+			theListOfCards.Insert(29, Properties.Resources.diamond4);
+			theListOfCards.Insert(30, Properties.Resources.diamond5);
+			theListOfCards.Insert(31, Properties.Resources.diamond6);
+			theListOfCards.Insert(32, Properties.Resources.diamond7);
+			theListOfCards.Insert(33, Properties.Resources.diamond8);
+			theListOfCards.Insert(34, Properties.Resources.diamond9);
+			theListOfCards.Insert(35, Properties.Resources.diamond10);
+			theListOfCards.Insert(36, Properties.Resources.diamondJ);
+			theListOfCards.Insert(37, Properties.Resources.diamondQ);
+			theListOfCards.Insert(38, Properties.Resources.diamondK);
+			theListOfCards.Insert(39, Properties.Resources.spade1);
+			theListOfCards.Insert(40, Properties.Resources.spade2);
+			theListOfCards.Insert(41, Properties.Resources.spade3);
+			theListOfCards.Insert(42, Properties.Resources.spade4);
+			theListOfCards.Insert(43, Properties.Resources.spade5);
+			theListOfCards.Insert(44, Properties.Resources.spade6);
+			theListOfCards.Insert(45, Properties.Resources.spade7);
+			theListOfCards.Insert(46, Properties.Resources.spade8);
+			theListOfCards.Insert(47, Properties.Resources.spade9);
+			theListOfCards.Insert(48, Properties.Resources.spade10);
+			theListOfCards.Insert(49, Properties.Resources.spadeJ);
+			theListOfCards.Insert(50, Properties.Resources.spadeQ);
+			theListOfCards.Insert(51, Properties.Resources.spadeK);
+			
 	
 
 
@@ -197,11 +207,18 @@ namespace Better21TristanR
 
 
 		}
-		//private int ChangeCard (ref List<Image>theListOfCards, thePictureBox , theIndex)
-		//{
+		private int ChangeCard (ref List<Image>theListOfCards, thePictureBox , theIndex)
+		{
+			if (theIndex = 1)
+			{
+				thePictureBox
+			}
 
 
-		//}
+		}
+
+			// do bankrupt idea for extra partial
+			// ** if balance = 0 **//
 		private void timer_Tick(object sender, EventArgs e)
 		{
 			lblTime.Text = DateTime.Now.ToString("HH:mm:ss tt");
@@ -537,7 +554,7 @@ namespace Better21TristanR
 				timer1.Start();
 				if (hard == true)
 				{
-					StartTimer()
+					StartTimer();
 				
 				}
 
