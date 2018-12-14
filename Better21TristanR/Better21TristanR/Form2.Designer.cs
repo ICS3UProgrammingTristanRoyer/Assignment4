@@ -35,9 +35,9 @@
 			// 
 			// prbProgressBar
 			// 
-			this.prbProgressBar.Location = new System.Drawing.Point(236, 230);
+			this.prbProgressBar.Location = new System.Drawing.Point(262, 230);
 			this.prbProgressBar.Name = "prbProgressBar";
-			this.prbProgressBar.Size = new System.Drawing.Size(299, 23);
+			this.prbProgressBar.Size = new System.Drawing.Size(256, 23);
 			this.prbProgressBar.TabIndex = 1;
 			// 
 			// label1
@@ -73,6 +73,7 @@
 			this.Controls.Add(this.prbProgressBar);
 			this.Name = "Form2";
 			this.Text = "Form2";
+			this.Load += new System.EventHandler(this.Form2_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

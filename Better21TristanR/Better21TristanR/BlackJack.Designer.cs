@@ -52,17 +52,10 @@
 			this.nudBetAmount = new System.Windows.Forms.NumericUpDown();
 			this.lblBetAmount = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
-			this.lblCard1 = new System.Windows.Forms.Label();
-			this.lblCard2 = new System.Windows.Forms.Label();
-			this.lblCard3 = new System.Windows.Forms.Label();
 			this.lblPlayer = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.lblDealerCard1 = new System.Windows.Forms.Label();
-			this.lblDealerCard2 = new System.Windows.Forms.Label();
-			this.lblDealerCard3 = new System.Windows.Forms.Label();
 			this.lblBalance = new System.Windows.Forms.Label();
 			this.lblBetError = new System.Windows.Forms.Label();
-			this.lblDealerCard4 = new System.Windows.Forms.Label();
 			this.lblBlackjack = new System.Windows.Forms.Label();
 			this.lblTitle = new System.Windows.Forms.Label();
 			this.lblTime = new System.Windows.Forms.Label();
@@ -285,44 +278,13 @@
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(680, 80);
+			this.button1.Location = new System.Drawing.Point(680, 110);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 12;
 			this.button1.Text = "Bet";
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// lblCard1
-			// 
-			this.lblCard1.AutoSize = true;
-			this.lblCard1.BackColor = System.Drawing.Color.LightCyan;
-			this.lblCard1.Location = new System.Drawing.Point(161, 32);
-			this.lblCard1.Name = "lblCard1";
-			this.lblCard1.Size = new System.Drawing.Size(43, 13);
-			this.lblCard1.TabIndex = 13;
-			this.lblCard1.Text = "CARD1";
-			this.lblCard1.Click += new System.EventHandler(this.label4_Click);
-			// 
-			// lblCard2
-			// 
-			this.lblCard2.AutoSize = true;
-			this.lblCard2.BackColor = System.Drawing.Color.LightCyan;
-			this.lblCard2.Location = new System.Drawing.Point(263, 32);
-			this.lblCard2.Name = "lblCard2";
-			this.lblCard2.Size = new System.Drawing.Size(43, 13);
-			this.lblCard2.TabIndex = 14;
-			this.lblCard2.Text = "CARD2";
-			// 
-			// lblCard3
-			// 
-			this.lblCard3.AutoSize = true;
-			this.lblCard3.BackColor = System.Drawing.Color.LightCyan;
-			this.lblCard3.Location = new System.Drawing.Point(355, 32);
-			this.lblCard3.Name = "lblCard3";
-			this.lblCard3.Size = new System.Drawing.Size(43, 13);
-			this.lblCard3.TabIndex = 15;
-			this.lblCard3.Text = "CARD3";
 			// 
 			// lblPlayer
 			// 
@@ -346,37 +308,6 @@
 			this.label5.TabIndex = 17;
 			this.label5.Text = "Dealer";
 			// 
-			// lblDealerCard1
-			// 
-			this.lblDealerCard1.AutoSize = true;
-			this.lblDealerCard1.BackColor = System.Drawing.Color.LightCyan;
-			this.lblDealerCard1.Location = new System.Drawing.Point(161, 63);
-			this.lblDealerCard1.Name = "lblDealerCard1";
-			this.lblDealerCard1.Size = new System.Drawing.Size(86, 13);
-			this.lblDealerCard1.TabIndex = 18;
-			this.lblDealerCard1.Text = "DEALERCARD1";
-			// 
-			// lblDealerCard2
-			// 
-			this.lblDealerCard2.AutoSize = true;
-			this.lblDealerCard2.BackColor = System.Drawing.Color.LightCyan;
-			this.lblDealerCard2.Location = new System.Drawing.Point(263, 63);
-			this.lblDealerCard2.Name = "lblDealerCard2";
-			this.lblDealerCard2.Size = new System.Drawing.Size(86, 13);
-			this.lblDealerCard2.TabIndex = 19;
-			this.lblDealerCard2.Text = "DEALERCARD2";
-			// 
-			// lblDealerCard3
-			// 
-			this.lblDealerCard3.AutoSize = true;
-			this.lblDealerCard3.BackColor = System.Drawing.Color.LightCyan;
-			this.lblDealerCard3.Location = new System.Drawing.Point(355, 63);
-			this.lblDealerCard3.Name = "lblDealerCard3";
-			this.lblDealerCard3.Size = new System.Drawing.Size(86, 13);
-			this.lblDealerCard3.TabIndex = 20;
-			this.lblDealerCard3.Text = "DEALERCARD3";
-			this.lblDealerCard3.Click += new System.EventHandler(this.label8_Click);
-			// 
 			// lblBalance
 			// 
 			this.lblBalance.AutoSize = true;
@@ -391,21 +322,12 @@
 			// lblBetError
 			// 
 			this.lblBetError.AutoSize = true;
-			this.lblBetError.Location = new System.Drawing.Point(557, 119);
+			this.lblBetError.Location = new System.Drawing.Point(554, 147);
 			this.lblBetError.Name = "lblBetError";
 			this.lblBetError.Size = new System.Drawing.Size(13, 13);
 			this.lblBetError.TabIndex = 22;
 			this.lblBetError.Text = "--";
-			// 
-			// lblDealerCard4
-			// 
-			this.lblDealerCard4.AutoSize = true;
-			this.lblDealerCard4.BackColor = System.Drawing.Color.LightCyan;
-			this.lblDealerCard4.Location = new System.Drawing.Point(447, 63);
-			this.lblDealerCard4.Name = "lblDealerCard4";
-			this.lblDealerCard4.Size = new System.Drawing.Size(86, 13);
-			this.lblDealerCard4.TabIndex = 23;
-			this.lblDealerCard4.Text = "DEALERCARD4";
+			this.lblBetError.Click += new System.EventHandler(this.lblBetError_Click);
 			// 
 			// lblBlackjack
 			// 
@@ -445,7 +367,7 @@
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.lblTime);
-			this.groupBox1.Location = new System.Drawing.Point(631, 136);
+			this.groupBox1.Location = new System.Drawing.Point(631, 162);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(169, 53);
 			this.groupBox1.TabIndex = 28;
@@ -508,7 +430,6 @@
 			// 
 			// picDealerCard4
 			// 
-			this.picDealerCard4.Image = global::Better21TristanR.Properties.Resources.spadeQ;
 			this.picDealerCard4.Location = new System.Drawing.Point(392, 333);
 			this.picDealerCard4.Name = "picDealerCard4";
 			this.picDealerCard4.Size = new System.Drawing.Size(98, 130);
@@ -529,7 +450,7 @@
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.lblTimer);
-			this.groupBox2.Location = new System.Drawing.Point(631, 205);
+			this.groupBox2.Location = new System.Drawing.Point(631, 221);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(169, 45);
 			this.groupBox2.TabIndex = 37;
@@ -552,17 +473,10 @@
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.lblBlackjack);
-			this.Controls.Add(this.lblDealerCard4);
 			this.Controls.Add(this.lblBetError);
 			this.Controls.Add(this.lblBalance);
-			this.Controls.Add(this.lblDealerCard3);
-			this.Controls.Add(this.lblDealerCard2);
-			this.Controls.Add(this.lblDealerCard1);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.lblPlayer);
-			this.Controls.Add(this.lblCard3);
-			this.Controls.Add(this.lblCard2);
-			this.Controls.Add(this.lblCard1);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.lblBetAmount);
 			this.Controls.Add(this.nudBetAmount);
@@ -619,17 +533,10 @@
 		private System.Windows.Forms.NumericUpDown nudBetAmount;
 		private System.Windows.Forms.Label lblBetAmount;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Label lblCard1;
-		private System.Windows.Forms.Label lblCard2;
-		private System.Windows.Forms.Label lblCard3;
 		private System.Windows.Forms.Label lblPlayer;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label lblDealerCard1;
-		private System.Windows.Forms.Label lblDealerCard2;
-		private System.Windows.Forms.Label lblDealerCard3;
 		private System.Windows.Forms.Label lblBalance;
 		private System.Windows.Forms.Label lblBetError;
-		private System.Windows.Forms.Label lblDealerCard4;
 		private System.Windows.Forms.Label lblBlackjack;
 		private System.Windows.Forms.Label lblTitle;
 		private System.Windows.Forms.Label lblTime;

@@ -31,8 +31,15 @@ namespace Better21TristanR
 
 
 		// declare global variables
-		int MIN_CARD = 1;
-		int MAX_CARD = 10;
+		int cardIndex1;
+		int cardIndex2;
+		int cardIndex3;
+		int dealerCardIndex1;
+		int dealerCardIndex2;
+		int dealerCardIndex3;
+		int dealerCardIndex4;
+
+		int MIN_CARD = 0;
 		int balance = 100;
 		int card1;
 		int card2;
@@ -47,9 +54,13 @@ namespace Better21TristanR
 		double Earnings;
 		int intEarnings;
 		bool hard = false;
+		int max = 52;
 
 		// creates the list where I will contain all my card images 
 		List<Image> listOfCards = new List<Image>();
+
+		List<int> listOfValues = new List<int>();
+
 
 		// allows random function to be used.
 		Random rnd = new Random();
@@ -68,6 +79,59 @@ namespace Better21TristanR
 
 
 
+			// sends the images to their proper indexes
+			listOfValues.Insert(0, 1);
+			listOfValues.Insert(1, 2);
+			listOfValues.Insert(2, 3);
+			listOfValues.Insert(3, 4);
+			listOfValues.Insert(4, 5);
+			listOfValues.Insert(5, 6);
+			listOfValues.Insert(6, 7);
+			listOfValues.Insert(7, 8);
+			listOfValues.Insert(8, 9);
+			listOfValues.Insert(9, 10);
+			listOfValues.Insert(10, 10);
+			listOfValues.Insert(11, 10);
+			listOfValues.Insert(12, 10);
+			listOfValues.Insert(13, 1);
+			listOfValues.Insert(14, 2);
+			listOfValues.Insert(15, 3);
+			listOfValues.Insert(16, 4);
+			listOfValues.Insert(17, 5);
+			listOfValues.Insert(18, 6);
+			listOfValues.Insert(19, 7);
+			listOfValues.Insert(20, 8);
+			listOfValues.Insert(21, 9);
+			listOfValues.Insert(22, 10);
+			listOfValues.Insert(23, 10);
+			listOfValues.Insert(24, 10);
+			listOfValues.Insert(25, 10);
+			listOfValues.Insert(26, 1);
+			listOfValues.Insert(27, 2);
+			listOfValues.Insert(28, 3);
+			listOfValues.Insert(29, 4);
+			listOfValues.Insert(30, 5);
+			listOfValues.Insert(31, 6);
+			listOfValues.Insert(32, 7);
+			listOfValues.Insert(33, 8);
+			listOfValues.Insert(34, 9);
+			listOfValues.Insert(35, 10);
+			listOfValues.Insert(36, 10);
+			listOfValues.Insert(37, 10);
+			listOfValues.Insert(38, 10);
+			listOfValues.Insert(39, 1);
+			listOfValues.Insert(40, 2);
+			listOfValues.Insert(41, 3);
+			listOfValues.Insert(42, 4);
+			listOfValues.Insert(43, 5);
+			listOfValues.Insert(44, 6);
+			listOfValues.Insert(45, 7);
+			listOfValues.Insert(46, 8);
+			listOfValues.Insert(47, 9);
+			listOfValues.Insert(48, 10);
+			listOfValues.Insert(49, 10);
+			listOfValues.Insert(50, 10);
+			listOfValues.Insert(51, 10);
 
 
 
@@ -78,13 +142,13 @@ namespace Better21TristanR
 			this.btnHit.Hide();
 			this.btnStay.Hide();
 			this.btnDoubleDown.Hide();
-			this.lblCard1.Hide();
-			this.lblCard2.Hide();
-			this.lblCard3.Hide();
-			this.lblDealerCard1.Hide();
-			this.lblDealerCard2.Hide();
-			this.lblDealerCard3.Hide();
-			this.lblDealerCard4.Hide();
+			this.picCard1.Hide();
+			this.picCard2.Hide();
+			this.picCard3.Hide();
+			this.picDealerCard1.Hide();
+			this.picDealerCard2.Hide();
+			this.picDealerCard3.Hide();
+			this.picDealerCard4.Hide();
 			this.lblDealerTotal.Hide();
 
 
@@ -98,6 +162,7 @@ namespace Better21TristanR
 
 		private void StartTimer()
 		{
+			// allows the counter to work
 			int theCounter = 10;
 
 			{
@@ -119,9 +184,9 @@ namespace Better21TristanR
 							
 							// show the deal values 
 							lblDealerTotal.Show();
-							lblDealerCard1.Show();
-							lblDealerCard2.Show();
-							lblDealerCard3.Show();
+							picDealerCard1.Show();
+							picDealerCard2.Show();
+							picDealerCard3.Show();
 							// hide the buttons for the user's choices.
 							this.btnHit.Hide();
 							this.btnStay.Hide();
@@ -137,64 +202,192 @@ namespace Better21TristanR
 
 
 		}
-
-		private void ShuffleCards(ref List<Image> theListOfCards)
+		private void SetValues()
 		{
+			// clears the list
+			listOfValues.Clear();
+
+
+			// sends the images to their proper indexes
+			listOfCards.Insert(0, Properties.Resources.heart1);
+			listOfCards.Insert(1, Properties.Resources.heart2);
+			listOfCards.Insert(2, Properties.Resources.heart3);
+			listOfCards.Insert(3, Properties.Resources.heart4);
+			listOfCards.Insert(4, Properties.Resources.heart5);
+			listOfCards.Insert(5, Properties.Resources.heart6);
+			listOfCards.Insert(6, Properties.Resources.heart7);
+			listOfCards.Insert(7, Properties.Resources.heart8);
+			listOfCards.Insert(8, Properties.Resources.heart9);
+			listOfCards.Insert(9, Properties.Resources.heart10);
+			listOfCards.Insert(10, Properties.Resources.heartJ);
+			listOfCards.Insert(11, Properties.Resources.heartQ);
+			listOfCards.Insert(12, Properties.Resources.heartK);
+			listOfCards.Insert(13, Properties.Resources.club1);
+			listOfCards.Insert(14, Properties.Resources.club2);
+			listOfCards.Insert(15, Properties.Resources.club3);
+			listOfCards.Insert(16, Properties.Resources.club4);
+			listOfCards.Insert(17, Properties.Resources.club5);
+			listOfCards.Insert(18, Properties.Resources.club6);
+			listOfCards.Insert(19, Properties.Resources.club7);
+			listOfCards.Insert(20, Properties.Resources.club8);
+			listOfCards.Insert(21, Properties.Resources.club9);
+			listOfCards.Insert(22, Properties.Resources.club10);
+			listOfCards.Insert(23, Properties.Resources.clubJ);
+			listOfCards.Insert(24, Properties.Resources.clubQ);
+			listOfCards.Insert(25, Properties.Resources.clubK);
+			listOfCards.Insert(26, Properties.Resources.diamond1);
+			listOfCards.Insert(27, Properties.Resources.diamond2);
+			listOfCards.Insert(28, Properties.Resources.diamond3);
+			listOfCards.Insert(29, Properties.Resources.diamond4);
+			listOfCards.Insert(30, Properties.Resources.diamond5);
+			listOfCards.Insert(31, Properties.Resources.diamond6);
+			listOfCards.Insert(32, Properties.Resources.diamond7);
+			listOfCards.Insert(33, Properties.Resources.diamond8);
+			listOfCards.Insert(34, Properties.Resources.diamond9);
+			listOfCards.Insert(35, Properties.Resources.diamond10);
+			listOfCards.Insert(36, Properties.Resources.diamondJ);
+			listOfCards.Insert(37, Properties.Resources.diamondQ);
+			listOfCards.Insert(38, Properties.Resources.diamondK);
+			listOfCards.Insert(39, Properties.Resources.spade1);
+			listOfCards.Insert(40, Properties.Resources.spade2);
+			listOfCards.Insert(41, Properties.Resources.spade3);
+			listOfCards.Insert(42, Properties.Resources.spade4);
+			listOfCards.Insert(43, Properties.Resources.spade5);
+			listOfCards.Insert(44, Properties.Resources.spade6);
+			listOfCards.Insert(45, Properties.Resources.spade7);
+			listOfCards.Insert(46, Properties.Resources.spade8);
+			listOfCards.Insert(47, Properties.Resources.spade9);
+			listOfCards.Insert(48, Properties.Resources.spade10);
+			listOfCards.Insert(49, Properties.Resources.spadeJ);
+			listOfCards.Insert(50, Properties.Resources.spadeQ);
+			listOfCards.Insert(51, Properties.Resources.spadeK);
+
+			// sends the images to their proper indexes
+			listOfValues.Insert(0, 1);
+			listOfValues.Insert(1, 2);
+			listOfValues.Insert(2, 3);
+			listOfValues.Insert(3, 4);
+			listOfValues.Insert(4, 5);
+			listOfValues.Insert(5, 6);
+			listOfValues.Insert(6, 7);
+			listOfValues.Insert(7, 8);
+			listOfValues.Insert(8, 9);
+			listOfValues.Insert(9, 10);
+			listOfValues.Insert(10, 10);
+			listOfValues.Insert(11, 10);
+			listOfValues.Insert(12, 10);
+			listOfValues.Insert(13, 1);
+			listOfValues.Insert(14, 2);
+			listOfValues.Insert(15, 3);
+			listOfValues.Insert(16, 4);
+			listOfValues.Insert(17, 5);
+			listOfValues.Insert(18, 6);
+			listOfValues.Insert(19, 7);
+			listOfValues.Insert(20, 8);
+			listOfValues.Insert(21, 9);
+			listOfValues.Insert(22, 10);
+			listOfValues.Insert(23, 10);
+			listOfValues.Insert(24, 10);
+			listOfValues.Insert(25, 10);
+			listOfValues.Insert(26, 1);
+			listOfValues.Insert(27, 2);
+			listOfValues.Insert(28, 3);
+			listOfValues.Insert(29, 4);
+			listOfValues.Insert(30, 5);
+			listOfValues.Insert(31, 6);
+			listOfValues.Insert(32, 7);
+			listOfValues.Insert(33, 8);
+			listOfValues.Insert(34, 9);
+			listOfValues.Insert(35, 10);
+			listOfValues.Insert(36, 10);
+			listOfValues.Insert(37, 10);
+			listOfValues.Insert(38, 10);
+			listOfValues.Insert(39, 1);
+			listOfValues.Insert(40, 2);
+			listOfValues.Insert(41, 3);
+			listOfValues.Insert(42, 4);
+			listOfValues.Insert(43, 5);
+			listOfValues.Insert(44, 6);
+			listOfValues.Insert(45, 7);
+			listOfValues.Insert(46, 8);
+			listOfValues.Insert(47, 9);
+			listOfValues.Insert(48, 10);
+			listOfValues.Insert(49, 10);
+			listOfValues.Insert(50, 10);
+			listOfValues.Insert(51, 10);
+
+
+
+
+
+
+
+
+
+
+
+		}
+
+		private void ShuffleCards()
+		{
+			// clears the list
+			listOfCards.Clear();
 			// plays the shuffle sound
 			shuffleSound.Play();
 
-			theListOfCards.Insert(0, Properties.Resources.heart1);
-			theListOfCards.Insert(1, Properties.Resources.heart2);
-			theListOfCards.Insert(2, Properties.Resources.heart3);
-			theListOfCards.Insert(3, Properties.Resources.heart4);			
-			theListOfCards.Insert(4, Properties.Resources.heart5);
-			theListOfCards.Insert(5, Properties.Resources.heart6);
-			theListOfCards.Insert(6, Properties.Resources.heart7);
-			theListOfCards.Insert(7, Properties.Resources.heart8);
-			theListOfCards.Insert(8, Properties.Resources.heart9);
-			theListOfCards.Insert(9, Properties.Resources.heart10);
-			theListOfCards.Insert(10, Properties.Resources.heartJ);
-			theListOfCards.Insert(11, Properties.Resources.heartQ);
-			theListOfCards.Insert(12, Properties.Resources.heartK);
-			theListOfCards.Insert(13, Properties.Resources.club1);
-			theListOfCards.Insert(14, Properties.Resources.club2);
-			theListOfCards.Insert(15, Properties.Resources.club3);
-			theListOfCards.Insert(16, Properties.Resources.club4);
-			theListOfCards.Insert(17, Properties.Resources.club5);
-			theListOfCards.Insert(18, Properties.Resources.club6);
-			theListOfCards.Insert(19, Properties.Resources.club7);
-			theListOfCards.Insert(20, Properties.Resources.club8);
-			theListOfCards.Insert(21, Properties.Resources.club9);
-			theListOfCards.Insert(22, Properties.Resources.club10);
-			theListOfCards.Insert(23, Properties.Resources.clubJ);
-			theListOfCards.Insert(24, Properties.Resources.clubQ);
-			theListOfCards.Insert(25, Properties.Resources.clubK);
-			theListOfCards.Insert(26, Properties.Resources.diamond1);
-			theListOfCards.Insert(27, Properties.Resources.diamond2);
-			theListOfCards.Insert(28, Properties.Resources.diamond3);
-			theListOfCards.Insert(29, Properties.Resources.diamond4);
-			theListOfCards.Insert(30, Properties.Resources.diamond5);
-			theListOfCards.Insert(31, Properties.Resources.diamond6);
-			theListOfCards.Insert(32, Properties.Resources.diamond7);
-			theListOfCards.Insert(33, Properties.Resources.diamond8);
-			theListOfCards.Insert(34, Properties.Resources.diamond9);
-			theListOfCards.Insert(35, Properties.Resources.diamond10);
-			theListOfCards.Insert(36, Properties.Resources.diamondJ);
-			theListOfCards.Insert(37, Properties.Resources.diamondQ);
-			theListOfCards.Insert(38, Properties.Resources.diamondK);
-			theListOfCards.Insert(39, Properties.Resources.spade1);
-			theListOfCards.Insert(40, Properties.Resources.spade2);
-			theListOfCards.Insert(41, Properties.Resources.spade3);
-			theListOfCards.Insert(42, Properties.Resources.spade4);
-			theListOfCards.Insert(43, Properties.Resources.spade5);
-			theListOfCards.Insert(44, Properties.Resources.spade6);
-			theListOfCards.Insert(45, Properties.Resources.spade7);
-			theListOfCards.Insert(46, Properties.Resources.spade8);
-			theListOfCards.Insert(47, Properties.Resources.spade9);
-			theListOfCards.Insert(48, Properties.Resources.spade10);
-			theListOfCards.Insert(49, Properties.Resources.spadeJ);
-			theListOfCards.Insert(50, Properties.Resources.spadeQ);
-			theListOfCards.Insert(51, Properties.Resources.spadeK);
+			// sends the images to their proper indexes
+			listOfCards.Insert(0, Properties.Resources.heart1);
+			listOfCards.Insert(1, Properties.Resources.heart2);
+			listOfCards.Insert(2, Properties.Resources.heart3);
+			listOfCards.Insert(3, Properties.Resources.heart4);			
+			listOfCards.Insert(4, Properties.Resources.heart5);
+			listOfCards.Insert(5, Properties.Resources.heart6);
+			listOfCards.Insert(6, Properties.Resources.heart7);
+			listOfCards.Insert(7, Properties.Resources.heart8);
+			listOfCards.Insert(8, Properties.Resources.heart9);
+			listOfCards.Insert(9, Properties.Resources.heart10);
+			listOfCards.Insert(10, Properties.Resources.heartJ);
+			listOfCards.Insert(11, Properties.Resources.heartQ);
+			listOfCards.Insert(12, Properties.Resources.heartK);
+			listOfCards.Insert(13, Properties.Resources.club1);
+			listOfCards.Insert(14, Properties.Resources.club2);
+			listOfCards.Insert(15, Properties.Resources.club3);
+			listOfCards.Insert(16, Properties.Resources.club4);
+			listOfCards.Insert(17, Properties.Resources.club5);
+			listOfCards.Insert(18, Properties.Resources.club6);
+			listOfCards.Insert(19, Properties.Resources.club7);
+			listOfCards.Insert(20, Properties.Resources.club8);
+			listOfCards.Insert(21, Properties.Resources.club9);
+			listOfCards.Insert(22, Properties.Resources.club10);
+			listOfCards.Insert(23, Properties.Resources.clubJ);
+			listOfCards.Insert(24, Properties.Resources.clubQ);
+			listOfCards.Insert(25, Properties.Resources.clubK);
+			listOfCards.Insert(26, Properties.Resources.diamond1);
+			listOfCards.Insert(27, Properties.Resources.diamond2);
+			listOfCards.Insert(28, Properties.Resources.diamond3);
+			listOfCards.Insert(29, Properties.Resources.diamond4);
+			listOfCards.Insert(30, Properties.Resources.diamond5);
+			listOfCards.Insert(31, Properties.Resources.diamond6);
+			listOfCards.Insert(32, Properties.Resources.diamond7);
+			listOfCards.Insert(33, Properties.Resources.diamond8);
+			listOfCards.Insert(34, Properties.Resources.diamond9);
+			listOfCards.Insert(35, Properties.Resources.diamond10);
+			listOfCards.Insert(36, Properties.Resources.diamondJ);
+			listOfCards.Insert(37, Properties.Resources.diamondQ);
+			listOfCards.Insert(38, Properties.Resources.diamondK);
+			listOfCards.Insert(39, Properties.Resources.spade1);
+			listOfCards.Insert(40, Properties.Resources.spade2);
+			listOfCards.Insert(41, Properties.Resources.spade3);
+			listOfCards.Insert(42, Properties.Resources.spade4);
+			listOfCards.Insert(43, Properties.Resources.spade5);
+			listOfCards.Insert(44, Properties.Resources.spade6);
+			listOfCards.Insert(45, Properties.Resources.spade7);
+			listOfCards.Insert(46, Properties.Resources.spade8);
+			listOfCards.Insert(47, Properties.Resources.spade9);
+			listOfCards.Insert(48, Properties.Resources.spade10);
+			listOfCards.Insert(49, Properties.Resources.spadeJ);
+			listOfCards.Insert(50, Properties.Resources.spadeQ);
+			listOfCards.Insert(51, Properties.Resources.spadeK);
 			
 	
 
@@ -206,22 +399,35 @@ namespace Better21TristanR
 
 
 
+
 		}
-		private int ChangeCard (ref List<Image>theListOfCards, thePictureBox , theIndex)
+		private int ChangeCard (ref PictureBox thePictureBox , int theIndex)
 		{
-			int cardValue;
-			if (theIndex = 1)
+			int cardValue = 0;
+
+			if (listOfCards.Count > 14)
 			{
-				thePictureBox.Image = theListOfCards[1]
-				theListOfCards.RemoveAt(1);
-				cardValue = 1;
+				thePictureBox.Image = listOfCards[theIndex];
+				listOfCards.RemoveAt(theIndex);
+				cardValue = cardValue + listOfValues[theIndex];
+				listOfValues.RemoveAt(theIndex);
+				max = max - 1;
+
+
+
+			}
+			else
+			{
+				ShuffleCards();
 			}
 
+			return cardValue;
+
+
 
 		}
 
-			// do bankrupt idea for extra partial
-			// ** if balance = 0 **//
+
 		private void timer_Tick(object sender, EventArgs e)
 		{
 			lblTime.Text = DateTime.Now.ToString("HH:mm:ss tt");
@@ -232,13 +438,18 @@ namespace Better21TristanR
 	   
 		private void btnHit_Click(object sender, EventArgs e)
 		{
+			if (listOfCards.Count <= 14)
+			{
+				ShuffleCards();
+			}
 			// declare local variables and assign values and update text.
 			const int STAY = 1;
 			const int HIT = 2;
 			const int DEALERMINIMUM = 1;
 			const int DEALERMAXIMUM = 2;
 			int dealerChoice;
-			card3 = rnd.Next(MIN_CARD, MAX_CARD + 1);
+			card3 = ChangeCard(ref picCard3, cardIndex3);
+			picCard3.Show();
 			playerCardTotal = card1 + card2 + card3;
 			dealerCardTotal = 0;
 			lblPlayerTotal.Text = "Player Total:" + playerCardTotal;
@@ -253,13 +464,18 @@ namespace Better21TristanR
 			// or they can choose to gain a new card.
 			else if (dealerChoice == HIT)
 			{
-				dealerCard4 = rnd.Next(MIN_CARD, MAX_CARD + 1);
+				dealerCard4 = ChangeCard(ref picDealerCard4, dealerCardIndex4);
 				dealerCardTotal = dealerCardTotal + dealerCard1 + dealerCard2 + dealerCard3 + dealerCard4;
 				lblDealerTotal.Text = "Dealer Total:" + dealerCardTotal;
-			
+				this.picDealerCard4.Show();
+
 
 			}
 			// show the deal values 
+			this.picDealerCard1.Show();
+			this.picDealerCard2.Show();
+			this.picDealerCard3.Show();
+			this.lblDealerTotal.Show();
 			lblDealerTotal.Show();
 		
 			// hide the buttons for the user's choices.
@@ -303,11 +519,16 @@ namespace Better21TristanR
 			this.button1.Hide();
 			MessageBox.Show(lblWinner.Text + "Your balance is now:" + balance);
 
+		
 
 		}
 
 		private void btnDoubleDown_Click(object sender, EventArgs e)
 		{
+			if (listOfCards.Count <= 14)
+				{
+					ShuffleCards();
+				}
 			//declare local variables
 			const int STAY = 1;
 			const int HIT = 2;
@@ -320,8 +541,9 @@ namespace Better21TristanR
 			{
 				// updates the values and text
 				balance = balance - bet;
-				card3 = rnd.Next(MIN_CARD, MAX_CARD + 1);
-				
+				card3 = ChangeCard(ref picCard3, cardIndex3);
+				picCard3.Show();
+
 				playerCardTotal = card1 + card2 + card3;
 				
 				dealerCardTotal = 0;
@@ -337,18 +559,19 @@ namespace Better21TristanR
 				// if the dealer's choice is to hit increase their value.
 				else if (dealerChoice == HIT)
 				{
-					dealerCard4 = rnd.Next(MIN_CARD, MAX_CARD + 1);
+					dealerCard4 = ChangeCard(ref picDealerCard4, dealerCardIndex4);
 					dealerCardTotal = dealerCardTotal + dealerCard1 + dealerCard2 + dealerCard3 + dealerCard4;
 					lblDealerTotal.Text = "Dealer Total:" + dealerCardTotal;
-					lblDealerCard4.Text = " " + dealerCard4;
-					lblDealerCard4.Show();
+					this.picDealerCard4.Show();
+
 
 				}
 				// displays the dealer's values
-				lblDealerTotal.Show();
-				lblDealerCard1.Show();
-				lblDealerCard2.Show();
-				lblDealerCard3.Show();
+
+				this.picDealerCard1.Show();
+				this.picDealerCard2.Show();
+				this.picDealerCard3.Show();
+				this.lblDealerTotal.Show();
 				// hide the buttons for the user's choices.
 				this.btnHit.Hide();
 				this.btnStay.Hide();
@@ -391,7 +614,7 @@ namespace Better21TristanR
 			{
 				lblError.Text = "Insufficient funds";
 			}
-			// hides the bet button.
+			//hides the bet button.
 			this.button1.Hide();
 			MessageBox.Show(lblWinner.Text + "Your balance is now:" + balance);
 
@@ -400,6 +623,10 @@ namespace Better21TristanR
 
 		private void btnStay_Click(object sender, EventArgs e)
 		{
+			if (listOfCards.Count <= 14)
+				{
+					ShuffleCards();
+				}
 			// declare local variables and assign values and update text.
 			const int STAY = 1;
 			const int HIT = 2;
@@ -421,15 +648,26 @@ namespace Better21TristanR
 			// if the dealer's choice is to hit update the value.
 			else if (dealerChoice == HIT)
 			{
-				dealerCard4 = rnd.Next(MIN_CARD, MAX_CARD + 1);
+				dealerCard4 = ChangeCard(ref picDealerCard4, dealerCardIndex4);
 				dealerCardTotal = dealerCardTotal + dealerCard1 + dealerCard2 + dealerCard3 + dealerCard4;
 				lblDealerTotal.Text = "Dealer Total:" + dealerCardTotal;
-			
+				this.picDealerCard4.Show();
+
 
 			}
 			// show the dealer values
+			this.picDealerCard1.Show();
+			this.picDealerCard2.Show();
+			this.picDealerCard3.Show();
+			this.lblDealerTotal.Show();
 			lblDealerTotal.Show();
-		
+
+			
+
+
+			
+
+
 			// hide the buttons for the user's choices.
 			this.btnHit.Hide();
 			this.btnStay.Hide();
@@ -462,6 +700,8 @@ namespace Better21TristanR
 			else if (playerCardTotal < dealerCardTotal)
 			{
 				lblWinner.Text = "you Lose";
+				MessageBox.Show(lblWinner.Text + " Your balance is now:" + balance);
+
 
 			}
 			lblBalance.Text = String.Format("CA${0:0.00}", balance);
@@ -472,7 +712,7 @@ namespace Better21TristanR
 			}
 			// hides the bet button.
 			this.button1.Hide();
-			MessageBox.Show(lblWinner.Text + "Your balance is now:" + balance);
+			MessageBox.Show(lblWinner.Text + " Your balance is now:" + balance);
 
 
 
@@ -506,57 +746,84 @@ namespace Better21TristanR
 
 		private void button1_Click(object sender, EventArgs e)
 		{
+				// shuffles cards
+				if (listOfCards.Count <= 14)
+                {
+				MessageBox.Show("Shuffling cards!", "ShuffleTime");
+				ShuffleCards();
+				this.Refresh();
 
-			// if the bet is less than or equal to the balance of the user execute the functions.
-			if (this.nudBetAmount.Value <= balance)
-			{
-				// bool to let the timer start
-				//makes the bet
-				bet = bet + (int)(this.nudBetAmount.Value);
-				// removes the bet from the balance 
-				balance = balance - bet;
-				//assigns the random cards and display's their values( dealer's values are hidden.)
-				card1 = rnd.Next(MIN_CARD, MAX_CARD + 1);
-				card2 = rnd.Next(MIN_CARD, MAX_CARD + 1);
-			
-				dealerCard1 = rnd.Next(MIN_CARD, MAX_CARD + 1);
-				dealerCard2 = rnd.Next(MIN_CARD, MAX_CARD + 1);
-				dealerCard3 = rnd.Next(MIN_CARD, MAX_CARD + 1);
-			
-				// updates player card total.
-				playerCardTotal = card1 + card2 + card3;
-				// shows the player card total.
-				lblPlayerTotal.Show();
-				// displays the player's card total.
-				lblPlayerTotal.Text = "Player Total:" + playerCardTotal;
-				// shows the cards for the user.
-				
-				// shows the buttons for the user's options.
-				this.btnHit.Show();
-				this.btnStay.Show();
-				this.btnDoubleDown.Show();
-				// updates the balance text
-				lblBalance.Text = String.Format("CA${0:0.00}", balance);
-				// acts as a storage of the earnings if you win (half of the bet)
-				Earnings = bet * 1 / 2;
-				// converts the earnings to an int preventing decimals.
-				intEarnings = Convert.ToInt32(Earnings);
-				timer1.Start();
-				if (hard == true)
-				{
-					StartTimer();
-				
+
 				}
 
-			}
-			else if (nudBetAmount.Value > balance)
-			{
-				// if the bet is over the balance display an error message.
-				this.lblBetError.Text = "Your balance is too low";
-			}
+			
+
+				// if the bet is less than or equal to the balance of the user execute the functions.
+				if (this.nudBetAmount.Value <= balance)
+					{
+						listOfCards.Count();
+						listOfValues.Count();
+						cardIndex1 = rnd.Next(MIN_CARD,listOfCards.Count()-1 );
+						cardIndex2 = rnd.Next(MIN_CARD, listOfCards.Count() - 1);
+						cardIndex3 = rnd.Next(MIN_CARD, listOfCards.Count() - 1);
+						dealerCardIndex1 = rnd.Next(MIN_CARD, listOfCards.Count() - 1);
+						dealerCardIndex2 = rnd.Next(MIN_CARD, listOfCards.Count() - 1);
+						dealerCardIndex3 = rnd.Next(MIN_CARD, listOfCards.Count() - 1);
+						dealerCardIndex4 = rnd.Next(MIN_CARD, listOfCards.Count() - 1);
 
 
-		}
+
+							//makes the bet
+					bet = bet + (int)(this.nudBetAmount.Value);
+					// removes the bet from the balance 
+					balance = balance - bet;
+					//assigns the random cards and display's their values( dealer's values are hidden.)(using lists)
+					card1 = ChangeCard(ref picCard1, cardIndex1);
+					card2 = ChangeCard(ref picCard2, cardIndex2);
+
+
+					dealerCard1 = ChangeCard(ref picDealerCard1, dealerCardIndex1);
+					dealerCard2 = ChangeCard(ref picDealerCard2, dealerCardIndex2);
+					dealerCard3 = ChangeCard(ref picDealerCard3, dealerCardIndex3);
+					// updates player card total.
+					playerCardTotal = card1 + card2 + card3;
+					// shows the player card total.
+					lblPlayerTotal.Show();
+					// displays the player's card total.
+					lblPlayerTotal.Text = "Player Total:" + playerCardTotal;
+					// shows the cards for the user.
+					picCard1.Show();
+					picCard2.Show();
+
+
+
+					// shows the buttons for the user's options.
+					this.btnHit.Show();
+					this.btnStay.Show();
+					this.btnDoubleDown.Show();
+					// updates the balance text
+					lblBalance.Text = String.Format("CA${0:0.00}", balance);
+					// acts as a storage of the earnings if you win (half of the bet)
+					Earnings = bet * 1 / 2;
+					// converts the earnings to an int preventing decimals.
+					intEarnings = Convert.ToInt32(Earnings);
+					this.button1.Hide();
+					timer1.Start();
+					if (hard == true)
+					{
+						StartTimer();
+
+					}
+
+				}
+				else if (nudBetAmount.Value > balance)
+				{
+					// if the bet is over the balance display an error message.
+					this.lblBetError.Text = "Your balance is too low";
+				}
+			}
+			
+		
 
 		private void label4_Click(object sender, EventArgs e)
 		{
@@ -576,19 +843,40 @@ namespace Better21TristanR
 
 		private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+
+
 			// resets all the values and hides the cards and resets the text except for the balance to allow the user to play another game.
 			this.btnHit.Hide();
 			bet = bet * 0;
 			this.btnStay.Hide();
 			this.btnDoubleDown.Hide();
-		
-			
+			this.btnHit.Hide();
+			this.btnStay.Hide();
+			this.btnDoubleDown.Hide();
+			this.picCard1.Hide();
+			this.picCard2.Hide();
+			this.picCard3.Hide();
+			this.picDealerCard1.Hide();
+			this.picDealerCard2.Hide();
+			this.picDealerCard3.Hide();
+			this.picDealerCard4.Hide();
+			this.button1.Show();
+			this.lblDealerTotal.Hide();
+
+			cardIndex1 = cardIndex1 * 0;
+			cardIndex2 = cardIndex2 * 0;
+			cardIndex3 = cardIndex3 * 0;
+			dealerCardIndex1 = dealerCardIndex1 * 0;
+			dealerCardIndex2 = dealerCardIndex2 * 0;
+			dealerCardIndex3 = dealerCardIndex3 * 0;
+			dealerCardIndex4 = dealerCardIndex4 * 0;
+
+
 			this.lblDealerTotal.Hide();
 			this.lblError.Text = "--";
 			this.lblWinner.Text = "--";
 			this.lblBlackjack.Text = "--";
 			lblPlayerTotal.Hide();
-			this.button1.Show();
 			card1 = card1 * 0;
 			card2 = card2 * 0;
 			card3 = card3 * 0;
@@ -599,24 +887,46 @@ namespace Better21TristanR
 			lblBetError.Text = "--";
 			playerCardTotal = playerCardTotal * 0;
 			dealerCardTotal = dealerCardTotal * 0;
-			
+		
+
 
 		}
 
 		private void resetProgressToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+			this.Hide();
+			Form2 frm2 = new Form2();
+			frm2.ShowDialog();
 			// resets every value therefore starting the game from the beginning.
 			bet = bet * 0;
 			this.btnHit.Hide();
 			this.btnStay.Hide();
 			this.btnDoubleDown.Hide();
-			
+			this.btnHit.Hide();
+			this.btnStay.Hide();
+			this.btnDoubleDown.Hide();
+			this.picCard1.Hide();
+			this.picCard2.Hide();
+			this.picCard3.Hide();
+			this.picDealerCard1.Hide();
+			this.picDealerCard2.Hide();
+			this.picDealerCard3.Hide();
+			this.picDealerCard4.Hide();
+			this.lblDealerTotal.Hide();
+
+			cardIndex1 = 0;
+			cardIndex2 = 0;
+			cardIndex3 = 0;
+			dealerCardIndex1 = 0;
+			dealerCardIndex2 = 0;
+			dealerCardIndex3 = 0;
+			dealerCardIndex4 = 0;
+
 			this.lblDealerTotal.Hide();
 			this.lblError.Text = "--";
 			this.lblWinner.Text = "--";
 			this.lblBlackjack.Text = "--";
 			lblPlayerTotal.Hide();
-			this.button1.Show();
 			card1 = card1 * 0;
 			card2 = card2 * 0;
 			card3 = card3 * 0;
@@ -627,11 +937,9 @@ namespace Better21TristanR
 			playerCardTotal = playerCardTotal * 0;
 			dealerCardTotal = dealerCardTotal * 0;
 			lblBetError.Text = "--";
+			this.button1.Show();
 			balance = balance * 0 + 100;
 			lblBalance.Text = String.Format("CA${0:0.00}", balance);
-			this.Hide();
-			Form2 frm2 = new Form2();
-			frm2.ShowDialog();
 
 		}
 
@@ -660,6 +968,23 @@ namespace Better21TristanR
 		{
 			// changes the bool to be false to change the game to regular mode.
 			hard = false;
+		}
+
+		private void lblBetError_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnShuffle_Click(object sender, EventArgs e)
+		{ 
+			if (listOfCards.Count() <= 14)
+				{
+					MessageBox.Show("Cards Shuffled! .", "CardShuffle");
+					ShuffleCards();
+					SetValues();
+				}
+					
+
 		}
 	}
 }

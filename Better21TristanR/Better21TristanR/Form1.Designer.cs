@@ -48,7 +48,7 @@
 			// lblUnderage
 			// 
 			this.lblUnderage.AutoSize = true;
-			this.lblUnderage.Location = new System.Drawing.Point(114, 163);
+			this.lblUnderage.Location = new System.Drawing.Point(28, 162);
 			this.lblUnderage.Name = "lblUnderage";
 			this.lblUnderage.Size = new System.Drawing.Size(13, 13);
 			this.lblUnderage.TabIndex = 1;
