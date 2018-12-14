@@ -106,6 +106,7 @@ namespace Better21TristanR
 
 		}
 
+		// increments the counter and when it reaches 0 it will cause the player to lose.
 		private void IncrementTimer(object sender, EventArgs e)
 		{
 			// allows the counter to work
@@ -123,7 +124,7 @@ namespace Better21TristanR
 						{
 						aTimer.Stop();
 						MessageBox.Show("You Lose." + "Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner Is");
-							lblWinner.Text = "you Lose";
+						lblWinner.Text = "You Lose";
 							
 							// show the deal values 
 							lblDealerTotal.Show();
@@ -212,7 +213,7 @@ namespace Better21TristanR
 			listOfCards.Insert(50, Properties.Resources.spadeQ);
 			listOfCards.Insert(51, Properties.Resources.spadeK);
 
-			// sends the images to their proper indexes
+			// sends the values to their proper indexes
 			listOfValues.Insert(0, 1);
 			listOfValues.Insert(1, 2);
 			listOfValues.Insert(2, 3);
@@ -278,6 +279,8 @@ namespace Better21TristanR
 
 
 		}
+
+		// function to Display the cards and return the card values.
 		private int ChangeCard (ref PictureBox thePictureBox )
 		{
 			int cardValue = 0;
@@ -299,6 +302,7 @@ namespace Better21TristanR
 		}
 
 
+		// displays the time with a label.
 		private void timer_Tick(object sender, EventArgs e)
 		{
 			lblTime.Text = DateTime.Now.ToString("HH:mm:ss tt");
@@ -311,6 +315,8 @@ namespace Better21TristanR
 		{
 			// resume the music
 			backSound.PlayLooping();
+			// shuffles cards if there are not enough left.
+
 			if (listOfCards.Count <= 7)
 			{
 				MessageBox.Show("Shuffling cards!", "ShuffleTime");
@@ -411,6 +417,8 @@ namespace Better21TristanR
 		{
 			// resume the music
 			backSound.PlayLooping();
+			// shuffles cards if there are not enough left.
+
 			if (listOfCards.Count <= 7)
 				{
 				MessageBox.Show("Shuffling cards!", "ShuffleTime");
@@ -525,6 +533,8 @@ namespace Better21TristanR
 		{
 			// resume the music
 			backSound.PlayLooping();
+
+			// shuffles cards if there are not enough left.
 			if (listOfCards.Count <= 7)
 				{
 				MessageBox.Show("Shuffling cards!", "ShuffleTime");
@@ -714,6 +724,7 @@ namespace Better21TristanR
 					// converts the earnings to an int preventing decimals.
 					intEarnings = Convert.ToInt32(Earnings);
 					this.button1.Hide();
+				// if the user has choosen hard mode increase the difficulty by adding a timer.
 					if (hard == true)
 					{
 					aTimer.Interval = 10000;
