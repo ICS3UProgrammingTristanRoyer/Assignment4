@@ -121,8 +121,8 @@ namespace Better21TristanR
 
 						if (theCounter == 0)
 						{
-							
-							MessageBox.Show(lblWinner.Text +"." + "Your balance is now:" + balance , "The Winner Is");
+						aTimer.Stop();
+						MessageBox.Show("You Lose." + "Your balance is now:" + balance , "The Winner Is");
 							lblWinner.Text = "you Lose";
 							
 							// show the deal values 
@@ -135,7 +135,6 @@ namespace Better21TristanR
 							this.btnStay.Hide();
 							this.btnDoubleDown.Hide();
 							this.button1.Hide();
-							aTimer.Stop();
 						}
 
 				}
