@@ -122,7 +122,7 @@ namespace Better21TristanR
 						if (theCounter == 0)
 						{
 						aTimer.Stop();
-						MessageBox.Show("You Lose." + "Your balance is now:" + balance , "The Winner Is");
+						MessageBox.Show("You Lose." + "Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner Is");
 							lblWinner.Text = "you Lose";
 							
 							// show the deal values 
@@ -135,7 +135,8 @@ namespace Better21TristanR
 							this.btnStay.Hide();
 							this.btnDoubleDown.Hide();
 							this.button1.Hide();
-						}
+						
+					}
 
 				}
 				
@@ -154,6 +155,8 @@ namespace Better21TristanR
 			listOfValues.Clear();
 			// plays the shuffle sound
 			shuffleSound.Play();
+
+			
 
 			// sends the images to their proper indexes
 			listOfCards.Insert(0, Properties.Resources.heart1);
@@ -306,6 +309,8 @@ namespace Better21TristanR
 	   
 		private void btnHit_Click(object sender, EventArgs e)
 		{
+			// resume the music
+			backSound.PlayLooping();
 			if (listOfCards.Count <= 7)
 			{
 				MessageBox.Show("Shuffling cards!", "ShuffleTime");
@@ -356,38 +361,47 @@ namespace Better21TristanR
 			if (playerCardTotal > 21)
 			{
 				lblWinner.Text = "you Lose";
+				MessageBox.Show(lblWinner.Text + "." + "Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner is...");
+
 			}
 			else if (dealerCardTotal > 21)
 			{
 				lblWinner.Text = "you win";
 				balance = balance + bet + intEarnings;
+				MessageBox.Show(lblWinner.Text + "." + "Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner is...");
+
 			}
 			else if (playerCardTotal == dealerCardTotal)
 			{
 				lblWinner.Text = "You tied , dealer wins.";
+				MessageBox.Show(lblWinner.Text + "." + "Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner is...");
+
 
 			}
 			else if (playerCardTotal > dealerCardTotal)
 			{
 				lblWinner.Text = "you win";
 				balance = balance + bet + intEarnings;
+				MessageBox.Show(lblWinner.Text + "." + "Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner is...");
+
 
 			}
 			else if (playerCardTotal < dealerCardTotal)
 			{
 				lblWinner.Text = "you Lose";
+				MessageBox.Show(lblWinner.Text + "." + "Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner is...");
+
 			}
-			lblBalance.Text = String.Format("CA${0:0.00}", balance);
 
 			if (playerCardTotal == 21)
 			{
 				lblBlackjack.Text = "BLACKJACK!";
 			}
 
+			lblBalance.Text = String.Format("CA${0:0.00}", balance);
 
 			// hides the bet button
 			this.button1.Hide();
-			MessageBox.Show(lblWinner.Text +"." + "Your balance is now:" + balance,"The Winner is...");
 
 		
 
@@ -395,6 +409,8 @@ namespace Better21TristanR
 
 		private void btnDoubleDown_Click(object sender, EventArgs e)
 		{
+			// resume the music
+			backSound.PlayLooping();
 			if (listOfCards.Count <= 7)
 				{
 				MessageBox.Show("Shuffling cards!", "ShuffleTime");
@@ -453,28 +469,37 @@ namespace Better21TristanR
 
 				{
 					lblWinner.Text = "you Lose";
+					MessageBox.Show(lblWinner.Text + "." + "Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner Is...");
+
 				}
 				else if (dealerCardTotal > 21)
 				{
 					lblWinner.Text = "you win";
 					balance = (intEarnings + bet) * 2 + balance;
+					MessageBox.Show(lblWinner.Text + "." + "Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner Is...");
+
 				}
 				else if (playerCardTotal == dealerCardTotal)
 				{
 					lblWinner.Text = "You tied , dealer wins.";
+					MessageBox.Show(lblWinner.Text + "." + "Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner Is...");
+
 
 				}
 				else if (playerCardTotal > dealerCardTotal)
 				{
 					lblWinner.Text = "you win";
 					balance = (intEarnings + bet) * 2 + balance;
+					MessageBox.Show(lblWinner.Text + "." + "Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner Is...");
+
 
 				}
 				else if (playerCardTotal < dealerCardTotal)
 				{
 					lblWinner.Text = "you Lose";
+					MessageBox.Show(lblWinner.Text + "." + "Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner Is...");
+
 				}
-				lblBalance.Text = String.Format("CA${0:0.00}", balance);
 
 				if (playerCardTotal == 21)
 				{
@@ -486,16 +511,20 @@ namespace Better21TristanR
 			{
 				lblError.Text = "Insufficient funds";
 
+
 			}
+			lblBalance.Text = String.Format("CA${0:0.00}", balance);
+
 			//hides the bet button.
 			this.button1.Hide();
-			MessageBox.Show(lblWinner.Text +"." + "Your balance is now:" + balance, "The Winner Is...");
 
 
 		}
 
 		private void btnStay_Click(object sender, EventArgs e)
 		{
+			// resume the music
+			backSound.PlayLooping();
 			if (listOfCards.Count <= 7)
 				{
 				MessageBox.Show("Shuffling cards!", "ShuffleTime");
@@ -551,18 +580,23 @@ namespace Better21TristanR
 			if (playerCardTotal > 21)
 			{
 				lblWinner.Text = "you Lose";
-				MessageBox.Show(lblWinner.Text + "And the change to the balance is: -" + bet);
+				MessageBox.Show(lblWinner.Text + " Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner is...");
+
 
 			}
 			else if (dealerCardTotal > 21)
 			{
 				lblWinner.Text = "you win";
 				balance = intEarnings + balance + bet;
+				MessageBox.Show(lblWinner.Text + " Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner is...");
+
 
 			}
 			else if (playerCardTotal == dealerCardTotal)
 			{
 				lblWinner.Text = "You tied , dealer wins.";
+				MessageBox.Show(lblWinner.Text + " Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner is...");
+
 
 
 			}
@@ -570,24 +604,26 @@ namespace Better21TristanR
 			{
 				lblWinner.Text = "you win";
 				balance = balance + intEarnings + bet;
+				MessageBox.Show(lblWinner.Text + " Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner is...");
+
 
 			}
 			else if (playerCardTotal < dealerCardTotal)
 			{
 				lblWinner.Text = "you Lose";
-				MessageBox.Show(lblWinner.Text + " Your balance is now:" + balance);
+				MessageBox.Show(lblWinner.Text + " Your balance is now:" + String.Format("CA${0:0.00}", balance), "The Winner is...");
+
 
 
 			}
-			lblBalance.Text = String.Format("CA${0:0.00}", balance);
 
 			if (playerCardTotal == 21)
 			{
 				lblBlackjack.Text = "BLACKJACK!";
 			}
 			// hides the bet button.
+			lblBalance.Text = String.Format("CA${0:0.00}", balance);
 			this.button1.Hide();
-			MessageBox.Show(lblWinner.Text + " Your balance is now:" + balance);
 
 
 
